@@ -4,7 +4,7 @@ public class CosineTesting {
 
   //@ requires (! Double.isNaN(a));
   //@ ensures \result >= -1.0 && \result <= 1.0;
-  static double foo(double{
+  static double foo(double a){
     return Math.cos(a);
   }
 
