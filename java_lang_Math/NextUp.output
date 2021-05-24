@@ -1,0 +1,7 @@
+Proving methods in NextUp
+Starting proof of NextUp.NextUp() with prover z3_4_3
+Method assertions are validated [1.05 secs]
+NextUp.java:3: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+NextUp.java:3: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of NextUp.NextUp() with prover z3_4_3 - no warnings [1.13 secs]
+Starting proof of NextUp.nextUp_test_1(double) with prover z3_4_3

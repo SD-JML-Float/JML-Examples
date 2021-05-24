@@ -1,0 +1,47 @@
+Proving methods in Hypot
+Starting proof of Hypot.Hypot() with prover z3_4_3
+Method assertions are validated [1.06 secs]
+Hypot.java:1: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+Hypot.java:1: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of Hypot.Hypot() with prover z3_4_3 - no warnings [1.14 secs]
+Starting proof of Hypot.hypot_test_1(double,double) with prover z3_4_3
+Hypot.hypot_test_1 Method assertions are INVALID
+Hypot.java:12: warning: The prover cannot establish an assertion (Postcondition: Hypot.java:8: ) in method hypot_test_1
+	return c;
+	^
+Hypot.java:8: warning: Associated declaration: Hypot.java:12: 
+//@ ensures \result == b;
+    ^
+Completed proof of Hypot.hypot_test_1(double,double) with prover z3_4_3 - with warnings [1.07 secs]
+Starting proof of Hypot.hypot_test_2(double,double) with prover z3_4_3
+Hypot.hypot_test_2 Method assertions are INVALID
+Hypot.java:20: warning: The prover cannot establish an assertion (Postcondition: Hypot.java:16: ) in method hypot_test_2
+        return c;
+        ^
+Hypot.java:16: warning: Associated declaration: Hypot.java:20: 
+//@ ensures \result == 0.0;
+    ^
+Completed proof of Hypot.hypot_test_2(double,double) with prover z3_4_3 - with warnings [1.06 secs]
+Starting proof of Hypot.hypot_test_3(double,double) with prover z3_4_3
+Hypot.hypot_test_3 Method assertions are INVALID
+Hypot.java:28: warning: The prover cannot establish an assertion (Postcondition: Hypot.java:24: ) in method hypot_test_3
+        return c;
+        ^
+Hypot.java:24: warning: Associated declaration: Hypot.java:28: 
+//@ ensures \result == 1.0;
+    ^
+Completed proof of Hypot.hypot_test_3(double,double) with prover z3_4_3 - with warnings [1.06 secs]
+Completed proving methods in Hypot [4.38 secs]
+Note: Summary:
+    Valid:        1
+    Invalid:      3
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      0
+   TOTAL METHODS: 4
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          4.5 secs
+6 warnings

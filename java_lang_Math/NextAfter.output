@@ -1,0 +1,7 @@
+Proving methods in NextAfter
+Starting proof of NextAfter.NextAfter() with prover z3_4_3
+Method assertions are validated [1.06 secs]
+NextAfter.java:3: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+NextAfter.java:3: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of NextAfter.NextAfter() with prover z3_4_3 - no warnings [1.17 secs]
+Starting proof of NextAfter.nextAfter_test_1(double,double) with prover z3_4_3
