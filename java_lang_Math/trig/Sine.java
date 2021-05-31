@@ -8,7 +8,7 @@ public class Sine {
     return Math.sin(a);
   }
 
-  //@ ensures \result == 1.0;
+  //@ ensures \result == 0.0;
   static double sinZero(){
     return Math.sin(0.0);
   }
