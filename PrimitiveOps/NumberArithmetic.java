@@ -318,36 +318,4 @@ public class NumberArithmetic
 	//@ assert (1 == a * e + b * f && 1 == c * e + d * f && a * d != b * c ) ==> ( e == 1 / (a * d - b * c) * (d - b) && f == 1 / (a * d - b * c) * ( a - c)  );
 
    }
-
-
-
-
-
-/*
-
-	public static void test_5(float a)
-	{
-		//@ assert !(a != a) ==> a == a;
-
-		float b = Float.NaN;
-
-		//@ assert b != a;
-		//@ assert b != b;
-		//@ assert !(b > b);
-		//@ assert !(b >= b);
-	}
-
-        public static void test_5(double a)
-        {
-        //@ assert !(a != a) ==> a == a;
-
-        double b = Double.NaN;
-
-        //@ assert b != a;
-                //@ assert b != b;
-                //@ assert !(b > b);
-                //@ assert !(b >= b);
-        }
-
-*/
 }
