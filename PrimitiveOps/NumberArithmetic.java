@@ -17,7 +17,7 @@ public class NumberArithmetic
     //@ assert 3.0 >= 3.0;
     //@ assert 3.0f >= 3.0f;
 
-//    //@ assert 3.0 < 3.1;
+    //@ assert 3.0 < 3.1;
     //@ assert 3.0f < 3.1f;
     //@ assert 3.0 < 3.01;
     //@ assert 3.0f < 3.01f;
