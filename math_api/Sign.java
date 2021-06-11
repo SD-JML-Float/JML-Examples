@@ -39,4 +39,24 @@ public class Sign
 		//@ assert (b > 0.0) && (a < 0.0) ==> (Double.compare(-a, c) == 0);
 		//@ assert (b > 0.0) && (a > 0.0) ==> (Double.compare(a, c) == 0);
 	}
+
+	//@ requries Math.isFinite(a);
+	public static void signumTestFloat(float a)
+	{
+		float c = Math.signum(a);
+		//@ assert Math.isFinite(c);
+		//@ assert (Float.compare(a, 0.0f) == 0) ==> (Float.compare(c, 0.0f) == 0);
+		//@ assert (a < 0.0f) ==> (Float.compare(c, -1.0f) == 0);
+		//@ assert (a > 0.0f) ==> (Float.compare(c, 1.0f) == 0);
+	}
+
+	//@ requries Math.isFinite(a);
+	public static void signumTestDouble(double a)
+	{
+		double c = Math.signum(a);
+		//@ assert Math.isFinite(c);
+		//@ assert (Double.compare(a, 0.0) == 0) ==> (Double.compare(c, 0.0) == 0);
+		//@ assert (a < 0.0) ==> (Double.compare(c, -1.0) == 0);
+		//@ assert (a > 0.0) ==> (Double.compare(c, 1.0) == 0);
+	}
 }
