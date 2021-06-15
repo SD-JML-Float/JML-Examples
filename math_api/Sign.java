@@ -5,8 +5,7 @@ public class Sign
 	{
 		float result = Math.abs(a);
 		//@ assert Math.isFinite(result);
-		//@ assert (a > 0.0f) ==> (result > 0.0f);
-		//@ assert (a < 0.0f) ==> (result > 0.0f);
+		//@ assert (Float.compare(result, 0.0f) >= 0);
 	}
 
 	//@ requires ! Math.isFinite(a);
@@ -14,7 +13,7 @@ public class Sign
 	{
 		float result = Math.abs(a);
 		//@ assert ((Float.compare(a, Float.POSITIVE_INFINITY) == 0) || (Float.compare(a, Float.NEGATIVE_INFINITY) == 0)) ==> (Float.compare(result, Float.POSITIVE_INFINITY) == 0);
-		//@ assert (Float.compare(a, Float.NaN) == 0) ==> (Float.compare(result, Float.NaN) == 0);
+		//@ assert isNaN(a) ==> isNaN(result);
 	}
 
 	//@ requires Math.isFinite(a);
@@ -22,8 +21,7 @@ public class Sign
 	{
 		double result = Math.abs(a);
 		//@ assert Math.isFinite(result);
-		//@ assert (a > 0.0) ==> (result > 0.0);
-		//@ assert (a < 0.0) ==> (result > 0.0);
+		//@ assert (Float.compare(result, 0.0) >= 0);
 	}
 
 	//@ requires ! Math.isFinite(a);
@@ -31,7 +29,7 @@ public class Sign
 	{
 		double result = Math.abs(a);
 		//@ assert ((Double.compare(a, Double.POSITIVE_INFINITY) == 0) || (Double.compare(a, Double.NEGATIVE_INFINITY) == 0)) ==> (Double.compare(result, Double.POSITIVE_INFINITY) == 0);
-		//@ assert (Double.compare(a, Double.NaN) == 0) ==> (Double.compare(result, Double.NaN) == 0);
+		//@ assert isNaN(a) ==> isNaN(result);
 	}
 
 	/**
@@ -79,7 +77,7 @@ public class Sign
 	public static void signumTestAnomaliesFloat(float a)
 	{
 		float result = Math.signum(a);
-		//@ assert (Float.compare(a, Float.NaN) == 0) ==> (Float.compare(result, Float.NaN) == 0);
+		//@ assert isNaN(a) ==> isNaN(result);
 		//@ assert (Float.compare(a, Float.POSITIVE_INFINITY) == 0) ==> (Float.compare(result, Float.POSITIVE_INFINITY) == 0);
 		//@ assert (Float.compare(a, Float.NEGATIVE_INFINITY) == 0) ==> (Float.compare(result, Float.NEGATIVE_INFINITY) == 0);
 	}
@@ -99,7 +97,7 @@ public class Sign
 	public static void signumTestAnomaliesDouble(double a)
 	{
 		double result = Math.signum(a);
-		//@ assert (Double.compare(a, Double.NaN) == 0) ==> (Double.compare(result, Double.NaN) == 0);
+		//@ assert isNaN(a) ==> isNaN(result);
 		//@ assert (Double.compare(a, Double.POSITIVE_INFINITY) == 0) ==> (Double.compare(result, Double.POSITIVE_INFINITY) == 0);
 		//@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, Double.NEGATIVE_INFINITY) == 0);
 	}
