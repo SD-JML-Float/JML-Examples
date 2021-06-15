@@ -2,5 +2,5 @@
 *.class
 *.jar
 
-# OpenJML tool directory
-openjml/
+# Don't ignore anything in the openJML release folder
+!openjml/*
