@@ -1,3 +1,6 @@
 # Java Build Files
 *.class
 *.jar
+
+# Don't ignore anything in the openJML release folder
+!openjml/*
