@@ -1,59 +1,76 @@
-public /*@ pure @*/ class InfiniteProperties
+ public /*@ pure @*/ class InfiniteProperties
 {
-  // possible axioms
-  // @ axiom \forall double a; !Double.isNaN(a); a <= Double.POSITIVE_INFINITY;
-  // @ axiom \forall double a; !Double.isNaN(a); a >= Double.NEGATIVE_INFINITY;
-  // @ axiom \forall double a; a != Double.POSITIVE_INFINITY && a != Double.NEGATIVE_INFINITY && !Double.isNaN(a); Double.isFinite(a);
-  // @ axiom \forall double a; a == Double.POSITIVE_INFINITY || a == Double.NEGATIVE_INFINITY; Double.isInfinite(a);
-
-
-
-  // verify that finite constants can be compared to infinites correctly
-  public static void constant_properties()
+  // verify that positive and negative infinity compare correctly to each other
+  public static void signed_infinites()
   {
-    // @ show Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY;
     //@ assert Double.POSITIVE_INFINITY != Double.NEGATIVE_INFINITY;
     //@ assert Double.POSITIVE_INFINITY > Double.NEGATIVE_INFINITY;
     //@ assert Double.NEGATIVE_INFINITY < Double.POSITIVE_INFINITY;
+  }
+
+  // verify that a literal 0.0 compares correctly to both infinities
+  public static void compare_zero()
+  {
     //@ assert 0.0 != Double.POSITIVE_INFINITY;
     //@ assert 0.0 != Double.NEGATIVE_INFINITY;
     //@ assert 0.0 < Double.POSITIVE_INFINITY;
     //@ assert 0.0 > Double.NEGATIVE_INFINITY;
-    //@ assert Double.isFinite(0.0);
-
-/*
-    // use division by zero to get infinites instead of class fields
-    // need to properly account for resulting exception
-    //@ assert 0.0 != 1.0 / 0.0;
-    //@ assert 0.0 != -(1.0 / 0.0);
-    //@ assert 0.0 < 1.0 / 0.0;
-    //@ assert 0.0 > -(1.0 / 0.0);
-*/
   }
 
+  // verify that signed infinity results from division by zero with double literals
+  public static void division_by_zero()
+  {
+    //@ ghost double a = 1.0 / 0.0;
+    //@ assert a == Double.POSITIVE_INFINITY;
+    //@ ghost double b = -1.0 / 0.0;
+    //@ assert b == Double.NEGATIVE_INFINITY;
+  }
+
+  // verify that an non-NaN double variable compares correctly to both infinities
   //@ requires !Double.isNaN(a);
-  public static void comparisons(double a){
-    // @ show a, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY;
-    //@ assert ((a != Double.POSITIVE_INFINITY) && (a != Double.NEGATIVE_INFINITY)) ==> Double.isFinite(a);
+  public static void comparisons(double a)
+  {
     //@ assert a <= Double.POSITIVE_INFINITY;
     //@ assert a >= Double.NEGATIVE_INFINITY;
+    //@ assert ((a != Double.POSITIVE_INFINITY)) ==> (a < Double.POSITIVE_INFINITY);
+    //@ assert ((a != Double.NEGATIVE_INFINITY)) ==> (a > Double.NEGATIVE_INFINITY);
 
-    //@ assert Double.isFinite(a) ==> a < Double.POSITIVE_INFINITY;
-    //@ assert Double.isFinite(a) ==> a > Double.NEGATIVE_INFINITY;
   }
 
   //@ requires !Double.isNaN(a) && !Double.isNaN(b);
-  public static void basicOps(double a, double b)
+  public static void addition(double a, double b)
   {
-    // @ show a, b, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY;
-    //@ assert (Double.isInfinite(a) || Double.isInfinite(b)) ==> Double.isInfinite(a + b);
-    //@ assert (Double.isInfinite(a) || Double.isInfinite(b)) ==> Double.isInfinite(a - b);
-    //@ assert (Double.isInfinite(a) && (b != 0.0)) ==> Double.isInfinite(a * b);
-    //@ assert ((a != 0.0) && Double.isInfinite(b)) ==> Double.isInfinite(a * b);
-
-    //@ assert (Double.isInfinite(a) && !Double.isInfinite(b)) ==> Double.isInfinite(a / b);
-    //@ assert (!Double.isInfinite(a) && (b == 0)) ==> Double.isInfinite(a / b);
-    //@ assert (!Double.isInfinite(a) && Double.isInfinite(b)) ==> (a / b) == 0.0;
+    //@ assert (a == Double.POSITIVE_INFINITY && b != Double.NEGATIVE_INFINITY) ==> (a + b) == Double.POSITIVE_INFINITY;
+    //@ assert (a != Double.POSITIVE_INFINITY && b == Double.NEGATIVE_INFINITY) ==> (a + b) == Double.NEGATIVE_INFINITY;
+    //@ assert (a == Double.POSITIVE_INFINITY && b == Double.NEGATIVE_INFINITY) ==> Double.isNaN(a + b);
   }
 
+  //@ requires !Double.isNaN(a) && !Double.isNaN(b);
+  public static void subtraction(double a, double b)
+  {
+    //@ assert (a == Double.POSITIVE_INFINITY && b != Double.POSITIVE_INFINITY) ==> (a - b) == Double.POSITIVE_INFINITY;
+    //@ assert (a != Double.POSITIVE_INFINITY && b == Double.POSITIVE_INFINITY) ==> (a - b) == Double.NEGATIVE_INFINITY;
+    //@ assert (a == Double.POSITIVE_INFINITY && b == Double.POSITIVE_INFINITY) ==> Double.isNaN(a - b);
+  }
+
+  //@ requires !Double.isNaN(a) && !Double.isNaN(b);
+  public static void multiplication(double a, double b)
+  {
+    //@ assert (a == Double.POSITIVE_INFINITY && b == 0.0) ==> Double.isNaN(a * b);
+    //@ assert (a == Double.POSITIVE_INFINITY && b > 0.0) ==> (a * b) == Double.POSITIVE_INFINITY;
+    //@ assert (a == Double.POSITIVE_INFINITY && b < 0.0) ==> (a * b) == Double.NEGATIVE_INFINITY;
+    //@ assert (a == Double.NEGATIVE_INFINITY && b == 0.0) ==> Double.isNaN(a * b);
+    //@ assert (a == Double.NEGATIVE_INFINITY && b > 0.0) ==> (a * b) == Double.NEGATIVE_INFINITY;
+    //@ assert (a == Double.NEGATIVE_INFINITY && b < 0.0) ==> (a * b) == Double.POSITIVE_INFINITY;
+  }
+
+  //@ requires !Double.isNaN(a) && !Double.isNaN(b);
+  public static void division(double a, double b)
+  {
+    //@ assert ((a == Double.POSITIVE_INFINITY || a == Double.NEGATIVE_INFINITY) && (b == Double.POSITIVE_INFINITY || b == Double.NEGATIVE_INFINITY)) ==> Double.isNaN(a / b);
+    //@ assert (a == Double.POSITIVE_INFINITY && (b > 0.0 && b < Double.POSITIVE_INFINITY)) ==> (a / b) == Double.POSITIVE_INFINITY;
+    //@ assert (a == Double.POSITIVE_INFINITY && (b > Double.NEGATIVE_INFINITY && b < 0.0)) ==> (a / b) == Double.NEGATIVE_INFINITY;
+    //@ assert ((a > Double.NEGATIVE_INFINITY && a < Double.POSITIVE_INFINITY) && (b == Double.POSITIVE_INFINITY || b == Double.NEGATIVE_INFINITY)) ==> (a / b) == 0.0;
+    //@ assert (a != 0.0 && b == 0.0) ==> (a / b) == Double.POSITIVE_INFINITY || (a / b) == Double.NEGATIVE_INFINITY;
+  }
 }
