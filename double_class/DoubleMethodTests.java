@@ -32,7 +32,7 @@ public class DoubleMethodTests
     //@ assert instanceResult == false;
   }
 
-  //@ requires !1Math.isFinite(a);
+  //@ requires !Math.isFinite(a);
   public static void isNaNTestAnomalies(double a)
   {
     boolean staticResult = Double.isNaN(a);
@@ -66,7 +66,7 @@ public class DoubleMethodTests
   {
     Double instance = a;
     long instanceResult = instance.longValue();
-    //@ assert instanceResult == instance.DoubleToLongBits();
+    //@ assert instanceResult == Double.doubleToLongBits(a);
   }
 
   //@ requires !Math.isFinite(a);
@@ -74,7 +74,7 @@ public class DoubleMethodTests
   {
     Double instance = a;
     long instanceResult = instance.longValue();
-    //@ assert (Double.isNaN(a) == 0) ==> (instanceResult == 0x7FF8000000000000L);
+    //@ assert Double.isNaN(a) ==> (instanceResult == 0x7FF8000000000000L);
     //@ assert (Double.compare(a, Double.POSITIVE_INFINITY) == 0) ==> (instanceResult == 0x7ff0000000000000L);
     //@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (instanceResult == 0xfff0000000000000L);
   }
