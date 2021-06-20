@@ -1,0 +1,43 @@
+Proving methods in Sign
+Skipping proof of Sign.Sign() (excluded by -method)
+Skipping proof of Sign.absTestAnomaliesDouble(double) (excluded by -method)
+Skipping proof of Sign.absTestAnomaliesFloat(float) (excluded by -method)
+Skipping proof of Sign.absTestDouble(double) (excluded by -method)
+Skipping proof of Sign.absTestFloat(float) (excluded by -method)
+Starting proof of Sign.copySignTestDouble(double,double) with prover z3_4_3
+Sign.copySignTestDouble Method assertions are INVALID
+math_api/Sign.java:58: warning: The prover cannot establish an assertion (Assert) in method copySignTestDouble
+		//@ assert Math.isFinite(result);
+		    ^
+math_api/Sign.java:60: warning: The prover cannot establish an assertion (Assert) in method copySignTestDouble
+		//@ assert (sign < 0.0) && (magnitude < 0.0) ==> (Double.compare(magnitude, result) == 0);
+		    ^
+math_api/Sign.java:59: warning: The prover cannot establish an assertion (Assert) in method copySignTestDouble
+		//@ assert (sign < 0.0) && (magnitude > 0.0) ==> (Double.compare(magnitude, result) == 0);
+		    ^
+math_api/Sign.java:62: warning: The prover cannot establish an assertion (Assert) in method copySignTestDouble
+		//@ assert (sign > 0.0) && (magnitude > 0.0) ==> (Double.compare(magnitude, result) == 0);
+		    ^
+math_api/Sign.java:61: warning: The prover cannot establish an assertion (Assert) in method copySignTestDouble
+		//@ assert (sign > 0.0) && (magnitude < 0.0) ==> (Double.compare(-magnitude, result) == 0);
+		    ^
+Completed proof of Sign.copySignTestDouble(double,double) with prover z3_4_3 - with warnings [7.32 secs]
+Skipping proof of Sign.copySignTestFloat(float,float) (excluded by -method)
+Skipping proof of Sign.signumTestAnomaliesDouble(double) (excluded by -method)
+Skipping proof of Sign.signumTestAnomaliesFloat(float) (excluded by -method)
+Skipping proof of Sign.signumTestDouble(double) (excluded by -method)
+Skipping proof of Sign.signumTestFloat(float) (excluded by -method)
+Completed proving methods in Sign [7.34 secs]
+Note: Summary:
+    Valid:        0
+    Invalid:      1
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      10
+   TOTAL METHODS: 11
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          7.6 secs
+5 warnings

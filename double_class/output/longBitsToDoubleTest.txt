@@ -1,0 +1,31 @@
+Proving methods in DoubleMethodTests
+Skipping proof of DoubleMethodTests.DoubleMethodTests() (excluded by -method)
+Skipping proof of DoubleMethodTests.isInfiniteTest(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.isInfiniteTestAnomalies(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.isNaNTest(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.isNaNTestAnomalies(double) (excluded by -method)
+Starting proof of DoubleMethodTests.longBitsToDoubleTest(long) with prover z3_4_3
+Method assertions are validated [1.08 secs]
+double_class/DoubleMethodTests.java:51: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+double_class/DoubleMethodTests.java:51: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of DoubleMethodTests.longBitsToDoubleTest(long) with prover z3_4_3 - no warnings [1.18 secs]
+Skipping proof of DoubleMethodTests.longBitsToDoubleTestAnomalies(long) (excluded by -method)
+Skipping proof of DoubleMethodTests.longValueTest(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.longValueTestAnomalies(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTest(double,double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTestAAnomalies(double,double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTestBAnomalies(double,double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTestBothAnomalies(double,double) (excluded by -method)
+Completed proving methods in DoubleMethodTests [1.19 secs]
+Note: Summary:
+    Valid:        1
+    Invalid:      0
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      12
+   TOTAL METHODS: 13
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          1.3 secs

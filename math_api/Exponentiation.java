@@ -84,7 +84,7 @@ public class Exponentiation
 	}
 
 	//@ requires Math.isFinite(a) && Math.isFinite(b);
-	public static void pow(double a, double b)
+	public static void powTest(double a, double b)
 	{
 		double result = Math.pow(a, b);
 		//@ assert Math.isFinite(result);
