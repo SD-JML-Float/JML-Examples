@@ -1,0 +1,7 @@
+Proving methods in IEEEremainder
+Starting proof of IEEEremainder.IEEEremainder() with prover z3_4_3
+Method assertions are validated [1.06 secs]
+IEEEremainder.java:3: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+IEEEremainder.java:3: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of IEEEremainder.IEEEremainder() with prover z3_4_3 - no warnings [1.14 secs]
+Starting proof of IEEEremainder.IEEEremainder_test_1(double,double) with prover z3_4_3

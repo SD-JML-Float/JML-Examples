@@ -1,0 +1,43 @@
+Proving methods in NextDown
+Starting proof of NextDown.NextDown() with prover z3_4_3
+Method assertions are validated [1.07 secs]
+NextDown.java:3: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+NextDown.java:3: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of NextDown.NextDown() with prover z3_4_3 - no warnings [1.15 secs]
+Starting proof of NextDown.nextDown_test_1(double) with prover z3_4_3
+NextDown.nextDown_test_1 Method assertions are INVALID
+NextDown.java:13: warning: The prover cannot establish an assertion (Postcondition: NextDown.java:9: ) in method nextDown_test_1
+	return c;
+	^
+NextDown.java:9: warning: Associated declaration: NextDown.java:13: 
+//@ ensures \result < a;
+    ^
+Completed proof of NextDown.nextDown_test_1(double) with prover z3_4_3 - with warnings [1.06 secs]
+Starting proof of NextDown.nextDown_test_2(double) with prover z3_4_3
+Method assertions are validated [1.03 secs]
+NextDown.java:19: Feasibility check #1 - end of preconditions : OK [0.00 secs]
+NextDown.java:19: Feasibility check #2 - at program exit : OK [0.00 secs]
+Completed proof of NextDown.nextDown_test_2(double) with prover z3_4_3 - no warnings [1.05 secs]
+Starting proof of NextDown.nextDown_test_3(double) with prover z3_4_3
+NextDown.nextDown_test_3 Method assertions are INVALID
+NextDown.java:34: warning: The prover cannot establish an assertion (Postcondition: NextDown.java:30: ) in method nextDown_test_3
+        return c;
+        ^
+NextDown.java:30: warning: Associated declaration: NextDown.java:34: 
+//@ ensures \result >= a;
+    ^
+Completed proof of NextDown.nextDown_test_3(double) with prover z3_4_3 - with warnings [1.09 secs]
+Completed proving methods in NextDown [4.40 secs]
+Note: Summary:
+    Valid:        2
+    Invalid:      2
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      0
+   TOTAL METHODS: 4
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          4.5 secs
+4 warnings
