@@ -2,19 +2,19 @@ public class CompareTo
 {
   public static void compare_literals()
   {
-    Float f1 = new Float(0.0);
-    Float f2 = new Float(1.0);
+    Float f1 = new Float(0.0f);
+    Float f2 = new Float(1.0f);
     //@ assert f1.compareTo(f1) == 0;
     //@ assert f2.compareTo(f2) == 0;
 
     //@ assert f1.compareTo(f2) < 0;
     //@ assert f2.compareTo(f1) > 0;
 
-    //@ assert f1.compareTo(new Float(0.0)) == 0;
-    //@ assert f2.compareTo(new Float(1.0)) == 0;
+    //@ assert f1.compareTo(new Float(0.0f)) == 0;
+    //@ assert f2.compareTo(new Float(1.0f)) == 0;
 
-    //@ assert f1.compareTo(new Float(1.0)) < 0;
-    //@ assert f2.compareTo(new Float(0.0)) > 0;
+    //@ assert f1.compareTo(new Float(1.0f)) < 0;
+    //@ assert f2.compareTo(new Float(0.0f)) > 0;
   }
 
   //@ requires !Float.isNaN(a) && !Float.isNaN(b);
@@ -31,7 +31,7 @@ public class CompareTo
   {
     Float nan = new Float(Float.NaN);
     //@ assert nan.compareTo(new Float(Float.NaN)) == 0;
-    //@ assert nan.compareTo(new Float(0.0)) > 0;
+    //@ assert nan.compareTo(new Float(0.0f)) > 0;
     //@ assert nan.compareTo(new Float(Float.POSITIVE_INFINITY)) > 0;
   }
 

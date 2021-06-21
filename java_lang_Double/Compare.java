@@ -31,4 +31,16 @@ public class Compare
     //@ assert Double.compare(0.0, 0.0) == 0;
     //@ assert Double.compare(-0.0, -0.0) == 0;
   }
+
+  //@ requires !Double.isNaN(a) && !Double.isNaN(b);
+  public static void normal_properties(double a, double b)
+  {
+    //@ assert (a > b) ==> Double.compare(a,b) > 0;
+    //@ assert (a < b) ==> Double.compare(a,b) < 0;
+    //@ assert ((a == b) && (a != 0.0)) ==> Double.compare(a,b) == 0;
+    //@ assert ((Double.compare(a,0) > 0) && (Double.compare(b, a) > 0)) ==> Double.compare(b,0) > 0;
+    //@ assert ((Double.compare(a,0) < 0) && (Double.compare(b, a) < 0)) ==> Double.compare(b,0) < 0;
+    //@ assert ((Double.compare(0,a) > 0) && (Double.compare(a, b) > 0)) ==> Double.compare(0,b) > 0;
+    //@ assert ((Double.compare(0,a) < 0) && (Double.compare(a, b) < 0)) ==> Double.compare(0,b) < 0;
+  }
 }
