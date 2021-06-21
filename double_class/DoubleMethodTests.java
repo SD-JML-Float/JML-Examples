@@ -53,12 +53,12 @@ public class DoubleMethodTests
     double staticResult = Double.longBitsToDouble(a);
     Double instance = 0.0;
     double instanceResult = instance.longBitsToDouble(a);
-  }
-
-  //@ requires !Math.isFinite(a);
-  public static void longBitsToDoubleTestAnomalies(long a)
-  {
-    
+    //@ assert (a == 0x7ff8000000000000L) ==> Double.isNaN(staticResult);
+    //@ assert (a == 0x7ff8000000000000L) ==> Double.isNaN(instanceResult);
+    //@ assert (a == 0x7ff0000000000000L) ==> (Double.compare(staticResult, Double.POSITIVE_INFINITY) == 0);
+    //@ assert (a == 0x7ff0000000000000L) ==> (Double.compare(instanceResult, Double.POSITIVE_INFINITY) == 0);
+    //@ assert (a == 0xfff0000000000000L) ==> (Double.compare(staticResult, Double.NEGATIVE_INFINITY) == 0);
+    //@ assert (a == 0xfff0000000000000L) ==> (Double.compare(instanceResult, Double.NEGATIVE_INFINITY) == 0);
   }
 
   //@ requires Math.isFinite(a);
