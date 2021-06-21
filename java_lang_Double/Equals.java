@@ -1,7 +1,16 @@
 public class Equals
 {
+  public static void literal_equals()
+  {
+    Double a = new Double(0.0);
+    //@ assert a.equals(new Double(0.0));
+    //@ assert ! a.equals(new Double(1.0));
+    //@ assert (new Double(0.0)).equals(new Double(0.0));
+    //@ assert ! (new Double(0.0)).equals(new Double(1.0));
+  }
+
   //@ requires !Double.isNaN(d1) && !Double.isNaN(d2);
-  public static void normal_equals(double d1, double d2)
+  public static void arg_equals(double d1, double d2)
   {
     Double a = new Double(d1);
     Double b = new Double(d2);
@@ -10,7 +19,7 @@ public class Equals
     //@ assert (d1 != d2) ==> !a.equals(b);
     //@ assert (d1 != d2) ==> !b.equals(a);
   }
-  
+
   public static void nan_equals()
   {
     Double nan = new Double(Double.NaN);
