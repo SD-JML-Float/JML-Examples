@@ -14,7 +14,7 @@ testMath=true
 valid=0
 invalid=0
 hang=0
-
+infeasible=0
 
 
 
@@ -47,7 +47,7 @@ for filename in PrimitiveOps/*.java; do
 					((hang++))
 				fi
 
-				if grep -q "Invalid:      0" "out.txt"; then
+				if grep -q "Valid:        1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "valid"
 					((valid++))						
 				fi
@@ -56,6 +56,12 @@ for filename in PrimitiveOps/*.java; do
 					printf '\t\t%-30s %s\n' "$method" "invalid"
 					((invalid++))						
 				fi
+				
+				if  grep -q "Infeasible:   1" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "infeasible"
+					((infeasible++))						
+				fi
+
 				
 			fi
 		done <<< "$methods"
@@ -68,12 +74,14 @@ fi
 total_valid=$valid
 total_invalid=$invalid
 total_hang=$hang
+total_infeasible=$infeasible
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
 
 valid=0
 invalid=0
 hang=0
+infeasible=0
 
 
 
@@ -105,7 +113,7 @@ for filename in Double/*.java; do
 					((hang++))
 				fi
 
-				if grep -q "Invalid:      0" "out.txt"; then
+				if grep -q "Valid:        1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "valid"
 					((valid++))						
 				fi
@@ -113,6 +121,11 @@ for filename in Double/*.java; do
 				if  grep -q "Invalid:      1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "invalid"
 					((invalid++))						
+				fi
+				
+				if  grep -q "Infeasible:   1" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "infeasible"
+					((infeasible++))						
 				fi
 				
 			fi
@@ -123,16 +136,17 @@ done
 fi
 
 
-
 ((total_valid+=$valid))
 ((total_invalid+=$invalid))
 ((total_hang+=$hang))
+((total_infeasible+=$infeasible))
 
-printf '\nDoubles Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
 
 valid=0
 invalid=0
 hang=0
+infeasible=0
 
 
 
@@ -167,7 +181,7 @@ for filename in Float/*.java; do
 					((hang++))
 				fi
 
-				if grep -q "Invalid:      0" "out.txt"; then
+				if grep -q "Valid:        1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "valid"
 					((valid++))						
 				fi
@@ -175,6 +189,11 @@ for filename in Float/*.java; do
 				if  grep -q "Invalid:      1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "invalid"
 					((invalid++))						
+				fi
+				
+				if  grep -q "Infeasible:   1" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "infeasible"
+					((infeasible++))						
 				fi
 				
 			fi
@@ -189,11 +208,12 @@ fi
 ((total_invalid+=$invalid))
 ((total_hang+=$hang))
 
-printf '\nFloats Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
 
 valid=0
 invalid=0
 hang=0
+infeasible=0
 
 
 
@@ -227,7 +247,7 @@ for filename in Math/*.java; do
 					((hang++))
 				fi
 
-				if grep -q "Invalid:      0" "out.txt"; then
+				if grep -q "Valid:        1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "valid"
 					((valid++))						
 				fi
@@ -235,6 +255,11 @@ for filename in Math/*.java; do
 				if  grep -q "Invalid:      1" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "invalid"
 					((invalid++))						
+				fi
+				
+				if  grep -q "Infeasible:   1" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "infeasible"
+					((infeasible++))						
 				fi
 				
 			fi
@@ -248,11 +273,11 @@ fi
 ((total_invalid+=$invalid))
 ((total_hang+=$hang))
 
-printf '\nMath Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$hang"
+printf '\nMath Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
 
 
 
-printf '\n\n\n\n Overall Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$total_valid" "$total_invalid" "$total_hang"
+printf '\n\n\n\nOverall Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_hang"
 
 
 
