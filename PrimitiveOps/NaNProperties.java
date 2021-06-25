@@ -1,8 +1,5 @@
 public /*@ pure @*/ class NaNProperties
 {
-    // @ axiom \forall double a; !Double.isNaN(a); a != Double.NaN && Double.NaN != a;
-    // @ axiom Double.NaN != Double.NaN;
-
     // compare constants to NaN values
     public static void constant_properties()
     {
