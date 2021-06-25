@@ -1,0 +1,11 @@
+Proving methods in Trigonometry
+Skipping proof of Trigonometry.Trigonometry() (excluded by -method)
+Skipping proof of Trigonometry.acosTest(double) (excluded by -method)
+Skipping proof of Trigonometry.acosTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.asinTest(double) (excluded by -method)
+Skipping proof of Trigonometry.asinTestAnomalies(double) (excluded by -method)
+Starting proof of Trigonometry.atan2Test(double,double) with prover z3_4_3
+Trigonometry.atan2Test Method assertions are INVALID
+math_api/Trigonometry.java:57: warning: The prover cannot establish an assertion (Assert) in method atan2Test
+    //@ assert (Double.compare(a, 0.0) == 0) && (Double.compare(b, 0.0) > 0) ==> (Double.compare(result, 0.0) == 0);
+        ^

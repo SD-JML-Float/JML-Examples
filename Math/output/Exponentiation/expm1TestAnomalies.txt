@@ -1,0 +1,26 @@
+Proving methods in Exponentiation
+Skipping proof of Exponentiation.Exponentiation() (excluded by -method)
+Skipping proof of Exponentiation.cbrtTest(double) (excluded by -method)
+Skipping proof of Exponentiation.cbrtTestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.exmp1TestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.expm1Test(double) (excluded by -method)
+Skipping proof of Exponentiation.expTest(double) (excluded by -method)
+Skipping proof of Exponentiation.expTestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.getExponentTest(double) (excluded by -method)
+Skipping proof of Exponentiation.getExponentTestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.pow(double,double) (excluded by -method)
+Skipping proof of Exponentiation.sqrtTest(double) (excluded by -method)
+Skipping proof of Exponentiation.sqrtTestAnomalies(double) (excluded by -method)
+Completed proving methods in Exponentiation [0.01 secs]
+Note: Summary:
+    Valid:        0
+    Invalid:      0
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      12
+   TOTAL METHODS: 12
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          0.1 secs

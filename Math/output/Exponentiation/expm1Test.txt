@@ -1,0 +1,32 @@
+Proving methods in Exponentiation
+Skipping proof of Exponentiation.Exponentiation() (excluded by -method)
+Skipping proof of Exponentiation.cbrtTest(double) (excluded by -method)
+Skipping proof of Exponentiation.cbrtTestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.exmp1TestAnomalies(double) (excluded by -method)
+Starting proof of Exponentiation.expm1Test(double) with prover z3_4_3
+Exponentiation.expm1Test Method assertions are INVALID
+math_api/Exponentiation.java:55: warning: The prover cannot establish an assertion (Assert) in method expm1Test
+		//@ assert Math.isFinite(result);
+		    ^
+Completed proof of Exponentiation.expm1Test(double) with prover z3_4_3 - with warnings [2.90 secs]
+Skipping proof of Exponentiation.expTest(double) (excluded by -method)
+Skipping proof of Exponentiation.expTestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.getExponentTest(double) (excluded by -method)
+Skipping proof of Exponentiation.getExponentTestAnomalies(double) (excluded by -method)
+Skipping proof of Exponentiation.pow(double,double) (excluded by -method)
+Skipping proof of Exponentiation.sqrtTest(double) (excluded by -method)
+Skipping proof of Exponentiation.sqrtTestAnomalies(double) (excluded by -method)
+Completed proving methods in Exponentiation [2.92 secs]
+Note: Summary:
+    Valid:        0
+    Invalid:      1
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      11
+   TOTAL METHODS: 12
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          3.2 secs
+1 warning

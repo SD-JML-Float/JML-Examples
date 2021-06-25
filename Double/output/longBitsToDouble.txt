@@ -1,0 +1,26 @@
+Proving methods in DoubleMethodTests
+Skipping proof of DoubleMethodTests.DoubleMethodTests() (excluded by -method)
+Skipping proof of DoubleMethodTests.isInfiniteTest(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.isInfiniteTestAnomalies(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.isNaNTest(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.isNaNTestAnomalies(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.longBitsToDoubleTest(long) (excluded by -method)
+Skipping proof of DoubleMethodTests.longValueTest(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.longValueTestAnomalies(double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTest(double,double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTestAAnomalies(double,double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTestBAnomalies(double,double) (excluded by -method)
+Skipping proof of DoubleMethodTests.maxTestBothAnomalies(double,double) (excluded by -method)
+Completed proving methods in DoubleMethodTests [0.00 secs]
+Note: Summary:
+    Valid:        0
+    Invalid:      0
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      12
+   TOTAL METHODS: 12
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          0.1 secs

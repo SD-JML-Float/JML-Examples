@@ -1,0 +1,48 @@
+Proving methods in Trigonometry
+Skipping proof of Trigonometry.Trigonometry() (excluded by -method)
+Skipping proof of Trigonometry.acosTest(double) (excluded by -method)
+Skipping proof of Trigonometry.acosTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.asinTest(double) (excluded by -method)
+Skipping proof of Trigonometry.asinTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.atan2Test(double,double) (excluded by -method)
+Starting proof of Trigonometry.atan2TestAAnomalies(double,double) with prover z3_4_3
+Trigonometry.atan2TestAAnomalies Method assertions are INVALID
+math_api/Trigonometry.java:71: warning: The prover cannot establish an assertion (Assert) in method atan2TestAAnomalies
+    //@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, -Math.PI / 2.0) == 0);
+        ^
+math_api/Trigonometry.java:70: warning: The prover cannot establish an assertion (Assert) in method atan2TestAAnomalies
+    //@ assert (Double.compare(a, Double.POSITIVE_INFINITY) == 0) ==> (Double.compare(result, Math.PI / 2.0) == 0);
+        ^
+Completed proof of Trigonometry.atan2TestAAnomalies(double,double) with prover z3_4_3 - with warnings [4.34 secs]
+Skipping proof of Trigonometry.atan2TestBAnomailes(double,double) (excluded by -method)
+Skipping proof of Trigonometry.atan2TestBothAnomailes(double,double) (excluded by -method)
+Skipping proof of Trigonometry.atanTest(double) (excluded by -method)
+Skipping proof of Trigonometry.atanTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.coshTest(double) (excluded by -method)
+Skipping proof of Trigonometry.coshTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.cosTest(double) (excluded by -method)
+Skipping proof of Trigonometry.cosTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.sinhTest(double) (excluded by -method)
+Skipping proof of Trigonometry.sinhTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.sinTest(double) (excluded by -method)
+Skipping proof of Trigonometry.sinTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.tanhTest(double) (excluded by -method)
+Skipping proof of Trigonometry.tanhTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.tanTest(double) (excluded by -method)
+Skipping proof of Trigonometry.tanTestAnomalies(double) (excluded by -method)
+Skipping proof of Trigonometry.toDegreesTest(double) (excluded by -method)
+Skipping proof of Trigonometry.toRadiansTest(double) (excluded by -method)
+Completed proving methods in Trigonometry [4.35 secs]
+Note: Summary:
+    Valid:        0
+    Invalid:      1
+    Infeasible:   0
+    Timeout:      0
+    Error:        0
+    Skipped:      24
+   TOTAL METHODS: 25
+   Classes:       0 proved of 1
+   Model Classes: 0
+   Model methods: 0 proved of 0
+   DURATION:          4.6 secs
+2 warnings

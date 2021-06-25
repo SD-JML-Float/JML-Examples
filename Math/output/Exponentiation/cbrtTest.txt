@@ -1,0 +1,5 @@
+Proving methods in Exponentiation
+Skipping proof of Exponentiation.Exponentiation() (excluded by -method)
+Starting proof of Exponentiation.cbrtTest(double) with prover z3_4_3
+
+[Process Never Terminates]
