@@ -45,23 +45,19 @@ for filename in PrimitiveOps/*.java; do
 				if grep -q "timelimit:" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "hanged"
 					((hang++))
-				fi
+				
+				elif ! grep -q "Invalid:      0" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "invalid"
+					((invalid++))						
+				
+				elif ! grep -q "Infeasible:   0" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "infeasible"
+					((infeasible++))						
 
-				if grep -q "Valid:        1" "out.txt"; then
+				else
 					printf '\t\t%-30s %s\n' "$method" "valid"
 					((valid++))						
 				fi
-				
-				if  grep -q "Invalid:      1" "out.txt"; then
-					printf '\t\t%-30s %s\n' "$method" "invalid"
-					((invalid++))						
-				fi
-				
-				if  grep -q "Infeasible:   1" "out.txt"; then
-					printf '\t\t%-30s %s\n' "$method" "infeasible"
-					((infeasible++))						
-				fi
-
 				
 			fi
 		done <<< "$methods"
@@ -111,21 +107,18 @@ for filename in Double/*.java; do
 				if grep -q "timelimit:" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "hanged"
 					((hang++))
-				fi
-
-				if grep -q "Valid:        1" "out.txt"; then
-					printf '\t\t%-30s %s\n' "$method" "valid"
-					((valid++))						
-				fi
 				
-				if  grep -q "Invalid:      1" "out.txt"; then
+				elif ! grep -q "Invalid:      0" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "invalid"
 					((invalid++))						
-				fi
 				
-				if  grep -q "Infeasible:   1" "out.txt"; then
+				elif ! grep -q "Infeasible:   0" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "infeasible"
 					((infeasible++))						
+
+				else
+					printf '\t\t%-30s %s\n' "$method" "valid"
+					((valid++))						
 				fi
 				
 			fi
@@ -179,22 +172,20 @@ for filename in Float/*.java; do
 				if grep -q "timelimit:" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "hanged"
 					((hang++))
-				fi
+				
+				elif ! grep -q "Invalid:      0" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "invalid"
+					((invalid++))						
+				
+				elif ! grep -q "Infeasible:   0" "out.txt"; then
+					printf '\t\t%-30s %s\n' "$method" "infeasible"
+					((infeasible++))						
 
-				if grep -q "Valid:        1" "out.txt"; then
+				else
 					printf '\t\t%-30s %s\n' "$method" "valid"
 					((valid++))						
 				fi
 				
-				if  grep -q "Invalid:      1" "out.txt"; then
-					printf '\t\t%-30s %s\n' "$method" "invalid"
-					((invalid++))						
-				fi
-				
-				if  grep -q "Infeasible:   1" "out.txt"; then
-					printf '\t\t%-30s %s\n' "$method" "infeasible"
-					((infeasible++))						
-				fi
 				
 			fi
 		done <<< "$methods"
@@ -245,21 +236,18 @@ for filename in Math/*.java; do
 				if grep -q "timelimit:" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "hanged"
 					((hang++))
-				fi
-
-				if grep -q "Valid:        1" "out.txt"; then
-					printf '\t\t%-30s %s\n' "$method" "valid"
-					((valid++))						
-				fi
 				
-				if  grep -q "Invalid:      1" "out.txt"; then
+				elif ! grep -q "Invalid:      0" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "invalid"
 					((invalid++))						
-				fi
 				
-				if  grep -q "Infeasible:   1" "out.txt"; then
+				elif ! grep -q "Infeasible:   0" "out.txt"; then
 					printf '\t\t%-30s %s\n' "$method" "infeasible"
 					((infeasible++))						
+
+				else
+					printf '\t\t%-30s %s\n' "$method" "valid"
+					((valid++))						
 				fi
 				
 			fi
