@@ -12,6 +12,12 @@
 (define-fun abs_nan () Bool
 (fp.isNaN (fp.abs nanvalue)))
 
+(define-fun abs_pluszero () Bool
+(fp.eq (fp.abs pluszero) pluszero))
+
+(define-fun abs_minuszero () Bool
+(fp.eq (fp.abs minuszero) pluszero))
+
 (define-fun abs_plusinf () Bool
 (fp.eq (fp.abs plusinf) plusinf))
 
@@ -35,6 +41,23 @@
 (echo "")
 (pop)
 
+; check abs functionality with positve zero
+(push)
+(echo "abs positve zero property")
+(assert (not abs_pluszero))
+(check-sat)
+(echo "")
+(pop)
+
+; check abs functionality with negative zero
+(push)
+(echo "abs negative zero property")
+(assert (not abs_minuszero))
+(check-sat)
+(echo "")
+(pop)
+
+; check abs functionality with positive infinity
 (push)
 (echo "abs positive infinity property")
 (assert (not abs_plusinf))
@@ -42,6 +65,7 @@
 (echo "")
 (pop)
 
+; check abs functionality with negative infinity
 (push)
 (echo "abs negative infinity property")
 (assert (not abs_minusinf))
@@ -49,9 +73,12 @@
 (echo "")
 (pop)
 
+; check abs functionality with variables
 (push)
 (echo "abs with variables property")
 (assert (not abs_neg))
 (check-sat)
+(echo "")
+(pop)
 
 (exit)
