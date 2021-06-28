@@ -57,3 +57,5 @@
 (check-sat)
 (echo "") ; insert newline
 (pop)
+
+(exit)
