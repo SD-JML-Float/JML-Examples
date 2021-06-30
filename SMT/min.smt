@@ -48,7 +48,13 @@
 
 (push)
 (assert (fp.eq x minus_inf))
-(assert (not(fp.eq (fp.min x y) minus_inf)))
+(assert (not (fp.eq (fp.min x y) minus_inf)))
+(check-sat)
+(pop)
+
+(push)
+(assert (fp.eq x plus_inf))
+(assert (not (fp.eq (fp.min x y) y)))
 (check-sat)
 (pop)
 
@@ -64,6 +70,20 @@
 (assert (fp.eq (fp.min x y) x))
 (assert (not (fp.geq y plus_one)))
 (check-sat)
+(pop)
+
+(push)
+(declare-const z Float32)
+(assert (not (fp.isNaN z)))
+(assert (fp.eq (fp.min x y) x))
+(assert (fp.eq (fp.min y z ) y))
+(push)
+  (assert (not (fp.eq (fp.min x z) x)))
+  (check-sat)
+(pop)
+(push)
+  (assert (not (fp.geq z x)))
+  (check-sat)
 (pop)
 
 (exit)
