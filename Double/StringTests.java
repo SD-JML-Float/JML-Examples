@@ -418,8 +418,8 @@ public static void parseDouble_string_inf_tests(String a)
 	String c = "Infinity";
 	//@ assert c.equals(a.trim()) ==> b.doubleValue() == Double.POSITIVE_INFINITY;
 
-	Double b = Double.parseDouble(a);
-	String c = "-Infinity";
+	b = Double.parseDouble(a);
+	c = "-Infinity";
 	//@ assert c.equals(a.trim()) ==> b.doubleValue() == Double.NEGATIVE_INFINITY;
 }
 
@@ -527,8 +527,8 @@ public static void valueOf_string_inf_tests(String a)
 	String c = "Infinity";
 	//@ assert c.equals(a.trim()) ==> b.doubleValue() == Double.POSITIVE_INFINITY;
 
-	Double b = Double.valueOf(a);
-	String c = "-Infinity";
+	b = Double.valueOf(a);
+	c = "-Infinity";
 	//@ assert c.equals(a.trim()) ==> b.doubleValue() == Double.NEGATIVE_INFINITY;
 }
 
