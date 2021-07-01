@@ -126,7 +126,7 @@ public static void sum_inf_tests(double a, double b)
 {
 	double c = Double.sum(Double.POSITIVE_INFINITY, a);
 	//@ assert Double.isInfinite(c) || Double.isNaN(c);
-	double c = Double.sum(Double.NEGATIVE_INFINITY, a);
+	c = Double.sum(Double.NEGATIVE_INFINITY, a);
 	//@ assert Double.isInfinite(c) || Double.isNaN(c);
 	
 }

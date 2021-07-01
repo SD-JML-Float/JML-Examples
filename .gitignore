@@ -4,3 +4,6 @@
 
 # Don't ignore anything in the openJML release folder
 !openjml/*
+
+# ignore the external conformance tests
+SMT/conformance/*
