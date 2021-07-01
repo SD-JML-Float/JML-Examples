@@ -10,7 +10,7 @@
 (define-const nanvalue Float32 (_ NaN 8 24))
 
 (define-fun negation_nan () Bool
-(fp.isNan (fp.neg nanvalue)))
+(fp.isNaN (fp.neg nanvalue)))
 
 (define-fun negation_pluszero () Bool
 (fp.eq (fp.neg pluszero) minuszero))
@@ -27,7 +27,7 @@
 (declare-const x Float32)
 (assert (fp.geq x pluszero))
 (define-fun negation_variable () Bool
-(fp.eq (fp.neg x) x))
+(fp.eq (fp.neg x) (fp.mul RNE ((_ to_fp 8 24) RNE -1.0) x)))
 
 (push)
 (echo "negation nan property")
