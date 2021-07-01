@@ -33,10 +33,4 @@ public class Logarithm
     //@ assert (Double.compare(a, Double.POSITIVE_INFINITY) == 0) ==> (Double.compare(result, Double.POSITIVE_INFINITY) == 0);
     //@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> Double.isNaN(result);
   }
-
-  //@ requires ! Math.isFinite(a);
-  public static void log1pTest(double a)
-  {
-    
-  }
 }
