@@ -15,19 +15,19 @@
 
 
 #timelimit that we let OpenJML run for on a given method
-timelimit=30
+timelimit=8
 
 #boolean, do we test primitive test files?
 testPrimitives=true
 
 #boolean, do we test Double test files?
-testDouble=true
+testDouble=false
 
 #boolean, do we test Float test files?
-testFloat=true
+testFloat=false
 
 #boolean, do we test Math test files?
-testMath=true
+testMath=false
 
 #counters to keep track of test case results (valid, invalid, error, hang)
 valid=0
@@ -66,6 +66,10 @@ for filename in PrimitiveOps/*.java; do
 			if grep -q "timelimit:" "out.txt"; then
 				printf '\t\t%-30s %s\n' "$method" "hanged"
 				((hang++))
+	
+			elif ! grep -q "Error:        0" "out.txt"; then
+				printf '\t\t%-30s %s\n' "$method" "error"
+				((error++))		
 			
 			elif ! grep -q "Invalid:      0" "out.txt"; then
 				printf '\t\t%-30s %s\n' "$method" "invalid"
@@ -84,20 +88,23 @@ for filename in PrimitiveOps/*.java; do
 	done <<< "$methods"
 
 done
-fi
+
 
 
 total_valid=$valid
 total_invalid=$invalid
 total_hang=$hang
 total_infeasible=$infeasible
+total_error=$error
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+fi
 
 valid=0
 invalid=0
 hang=0
 infeasible=0
+error=0
 
 
 
@@ -132,6 +139,10 @@ for filename in Double/*.java; do
 				printf '\t\t%-30s %s\n' "$method" "hanged"
 				((hang++))
 			
+			elif ! grep -q "Error:        0" "out.txt"; then
+				printf '\t\t%-30s %s\n' "$method" "error"
+				((error++))	
+				
 			elif ! grep -q "Invalid:      0" "out.txt"; then
 				printf '\t\t%-30s %s\n' "$method" "invalid"
 				((invalid++))						
@@ -149,28 +160,31 @@ for filename in Double/*.java; do
 	done <<< "$methods"
 
 done
-fi
+
 
 
 ((total_valid+=$valid))
 ((total_invalid+=$invalid))
 ((total_hang+=$hang))
 ((total_infeasible+=$infeasible))
+((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+
+fi
 
 valid=0
 invalid=0
 hang=0
 infeasible=0
-
+error=0
 
 
 
 
 
 #test Float here
-if $test_Float ; then
+if $testFloat ; then
 
 echo "Float"
 for filename in Float/*.java; do
@@ -200,6 +214,10 @@ for filename in Float/*.java; do
 				printf '\t\t%-30s %s\n' "$method" "hanged"
 				((hang++))
 			
+			elif ! grep -q "Error:        0" "out.txt"; then
+				printf '\t\t%-30s %s\n' "$method" "error"
+				((error++))	
+			
 			elif ! grep -q "Invalid:      0" "out.txt"; then
 				printf '\t\t%-30s %s\n' "$method" "invalid"
 				((invalid++))						
@@ -217,19 +235,23 @@ for filename in Float/*.java; do
 	done <<< "$methods"
 
 done
-fi
+
 
 
 ((total_valid+=$valid))
 ((total_invalid+=$invalid))
 ((total_hang+=$hang))
+((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+
+fi
 
 valid=0
 invalid=0
 hang=0
 infeasible=0
+error=0
 
 
 
@@ -266,6 +288,10 @@ for filename in Math/*.java; do
 				printf '\t\t%-30s %s\n' "$method" "hanged"
 				((hang++))
 			
+			elif ! grep -q "Error:        0" "out.txt"; then
+				printf '\t\t%-30s %s\n' "$method" "error"
+				((error++))	
+			
 			elif ! grep -q "Invalid:      0" "out.txt"; then
 				printf '\t\t%-30s %s\n' "$method" "invalid"
 				((invalid++))						
@@ -282,17 +308,20 @@ for filename in Math/*.java; do
 		fi
 	done <<< "$methods"
 done
-fi
+
 
 ((total_valid+=$valid))
 ((total_invalid+=$invalid))
 ((total_hang+=$hang))
+((total_error+=$error))
 
-printf '\nMath Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 
+fi
 
-printf '\n\n\n\nOverall Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_hang"
+
+printf '\n\n\n\nOverall Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_error" "$total_hang"
 
 
 
