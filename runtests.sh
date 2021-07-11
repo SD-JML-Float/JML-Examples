@@ -97,7 +97,7 @@ total_hang=$hang
 total_infeasible=$infeasible
 total_error=$error
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 fi
 
 valid=0
@@ -169,7 +169,7 @@ done
 ((total_infeasible+=$infeasible))
 ((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 fi
 
@@ -243,7 +243,7 @@ done
 ((total_hang+=$hang))
 ((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 fi
 
@@ -315,13 +315,13 @@ done
 ((total_hang+=$hang))
 ((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 
 fi
 
 
-printf '\n\n\n\nOverall Results:\n\tTotal Valid:%-15s\n\tTotal Invalid:%-15s\n\tTotal Infeasible:%-15s\n\tTotal Errors:%-15s\n\tTotal Hanged:%-15s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_error" "$total_hang"
+printf '\n\n\n\nOverall Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_error" "$total_hang"
 
 
 
