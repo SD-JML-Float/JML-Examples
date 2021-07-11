@@ -1,3 +1,12 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Double:
+
+Double.compare(double d1, double d2)
+
+
+*/
+
+
 public class Compare
 {
   // hangs

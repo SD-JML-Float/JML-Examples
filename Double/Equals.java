@@ -1,3 +1,11 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Double:
+.equals(Double d)
+
+*/
+
+
+
 public class Equals
 {
   public static void literal_equals()

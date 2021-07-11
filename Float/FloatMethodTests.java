@@ -1,3 +1,16 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Float:
+
+Float.isInfinite(float a)
+Float.isNaN(float a)
+.isNaN()
+.longValue()
+Float.max(float f1, float f2)
+Float.floatToIntBits(float f)
+*/
+
+
+
 public class FloatMethodTests
 {
   public static void isInfiniteTest(float a)

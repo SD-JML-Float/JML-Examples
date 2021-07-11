@@ -1,3 +1,13 @@
+
+/*
+THIS PROGRAM TESTS THE FOLLOWING CONSTRUCTORS FROM java.lang.Float:
+
+Float(float f)
+Float(String s)
+
+
+*/
+
 public class Constructors
 {
   public static void float_constructor(float f)
