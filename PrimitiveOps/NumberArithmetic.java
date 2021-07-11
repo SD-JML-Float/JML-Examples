@@ -64,7 +64,6 @@ public class NumberArithmetic
     //@ assert -5194.333f > -5483.456f;
     //@ assert 3.44435f > -3.44435f;
     //@ assert 23.322f > -134443.4f;
-    //@ assert 6.22E3f > -9.3E10f;
     }
     
     public static void float_gte_constant_tests()
