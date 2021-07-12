@@ -1,3 +1,12 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Float:
+
+Float.compare(float f1, float f2)
+
+
+*/
+
+
 public class Compare
 {
   public static void compare_finite()

@@ -1,3 +1,13 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING CONSTRUCTORS FROM java.lang.Double:
+
+Double(double d)
+Double(String s)
+
+
+*/
+
+
 public class Constructors
 {
   public static void double_constructor(double d)

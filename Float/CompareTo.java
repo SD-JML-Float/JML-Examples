@@ -1,3 +1,12 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Float:
+
+.compareTo(Float f2)
+
+
+*/
+
+
 public class CompareTo
 {
   public static void compare_literals()

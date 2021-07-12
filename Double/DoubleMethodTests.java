@@ -1,3 +1,17 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Double:
+
+Double.isInfinite(double d)
+Double.isFinite(double d)
+Double.isNaN(double d)
+Double.longBitsToDouble(double d)
+.longBitsToDouble()
+.longValue()
+Double.max(double d1, double d2)
+*/
+
+
+
 public class DoubleMethodTests
 {
   //@ requires Math.isFinite(a);

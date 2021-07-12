@@ -1,3 +1,12 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Double:
+
+.compareTo(double d)
+
+
+*/
+
+
 public class CompareTo
 {
   public static void compare_literals()

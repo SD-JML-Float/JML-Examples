@@ -1,3 +1,13 @@
+/*
+THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Float:
+
+.equals(Float f)
+
+
+*/
+
+
+
 public class Equals
 {
   public static void literal_equals()
