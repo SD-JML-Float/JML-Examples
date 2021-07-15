@@ -388,7 +388,7 @@ public class MethodCalls
   {
 	Math.pow(-5834.53453, -5834.53453);
 	Math.pow(-349.0, -349.0);
-	Math.pow(-0.00348432), -0.00348432);
+	Math.pow(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
@@ -678,76 +678,76 @@ public class MethodCalls
   //Positive number inputs
   public static void atan2_plain_test_1()
   {
-	Math.atan2(2223434.8923);
-	Math.atan2(99.4023);
-	Math.atan2(0.00234204);
+	Math.atan2(2223434.8923, 2223434.8923);
+	Math.atan2(99.4023, 99.4023);
+	Math.atan2(0.00234204, 0.00234204);
   }
 
   //Negative number inputs
   public static void atan2_plain_test_2()
   {
-	Math.atan2(-5834.53453);
-	Math.atan2(-349.0);
-	Math.atan2(-0.00348432);
+	Math.atan2(-5834.53453, -5834.53453);
+	Math.atan2(-349.0, -349.0);
+	Math.atan2(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
   public static void atan2_plain_test_3()
   {
-	Math.atan2(3.2034E12);
-	Math.atan2(56.203424E3);
-	Math.atan2(64.3433E-7);
-	Math.atan2(-342.2348E9);
-	Math.atan2(-1.514E-2);
-	Math.atan2(-0.00253E5);
+	Math.atan2(3.2034E12, 3.2034E12);
+	Math.atan2(56.203424E3, 56.203424E3);
+	Math.atan2(64.3433E-7, 64.3433E-7);
+	Math.atan2(-342.2348E9, -342.2348E9);
+	Math.atan2(-1.514E-2, -1.514E-2);
+	Math.atan2(-0.00253E5, -0.00253E5);
   }
 
   //Integer inputs
   public static void atan2_plain_test_4()
   {
-	Math.atan2(13);
-	Math.atan2(-145);
-	Math.atan2(0);
-	Math.atan2(12323);
+	Math.atan2(13, 13);
+	Math.atan2(-145, -145);
+	Math.atan2(0, 0);
+	Math.atan2(12323, 12323);
   }
 
   //float inputs
   public static void atan2_plain_test_5()
   {
-	Math.atan2(234.23f);
-	Math.atan2(-15.244f);
-	Math.atan2(-0.003456f);
-	Math.atan2(13f);
+	Math.atan2(234.23f, 234.23f);
+	Math.atan2(-15.244f, -15.244f);
+	Math.atan2(-0.003456f, -0.003456f);
+	Math.atan2(13f, 13f);
   }
 
   //POSITIVE_INFINITY
   public static void atan2_plain_test_6()
   {
-	Math.atan2(Double.POSITIVE_INFINITY);
+	Math.atan2(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
   }
 
   //NEGATIVE_INFINITY
   public static void atan2_plain_test_7()
   {
-	Math.atan2(Double.NEGATIVE_INFINITY);
+	Math.atan2(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY);
   }
 
   //0.0
   public static void atan2_plain_test_8()
   {
-	Math.atan2(0.0);
+	Math.atan2(0.0, 0.0);
   }
 
   //-0.0 
   public static void atan2_plain_test_9()
   {
-	Math.atan2(-0.0);
+	Math.atan2(-0.0, -0.0);
   }
 
   //NaN
   public static void atan2_plain_test_10()
   {
-	Math.atan2(Double.NaN);
+	Math.atan2(Double.NaN, Double.NaN);
   }
 
   //Positive number inputs
@@ -1513,7 +1513,7 @@ public class MethodCalls
   {
 	Math.max(-5834.53453, -5834.53453);
 	Math.max(-349.0, -349.0);
-	Math.max(-0.00348432), -0.00348432);
+	Math.max(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
@@ -1589,7 +1589,7 @@ public class MethodCalls
   {
 	Math.min(-5834.53453, -5834.53453);
 	Math.min(-349.0, -349.0);
-	Math.min(-0.00348432), -0.00348432);
+	Math.min(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
@@ -1664,7 +1664,7 @@ public class MethodCalls
   {
 	Math.hypot(-5834.53453, -5834.53453);
 	Math.hypot(-349.0, -349.0);
-	Math.hypot(-0.00348432), -0.00348432);
+	Math.hypot(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
@@ -1740,7 +1740,7 @@ public class MethodCalls
   {
 	Math.IEEEremainder(-5834.53453, -5834.53453);
 	Math.IEEEremainder(-349.0, -349.0);
-	Math.IEEEremainder(-0.00348432), -0.00348432);
+	Math.IEEEremainder(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
@@ -1815,7 +1815,7 @@ public class MethodCalls
   {
 	Math.copySign(-5834.53453, -5834.53453);
 	Math.copySign(-349.0, -349.0);
-	Math.copySign(-0.00348432), -0.00348432);
+	Math.copySign(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
@@ -2190,7 +2190,7 @@ public class MethodCalls
   {
 	Math.nextAfter(-5834.53453, -5834.53453);
 	Math.nextAfter(-349.0, -349.0);
-	Math.nextAfter(-0.00348432), -0.00348432);
+	Math.nextAfter(-0.00348432, -0.00348432);
   }
 
   //Scientific notation inputs
