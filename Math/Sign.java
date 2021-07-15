@@ -1,5 +1,6 @@
 public class Sign
 {
+
 	//@ requires Math.isFinite(a);
 	public static void absTestFloat(float a)
 	{

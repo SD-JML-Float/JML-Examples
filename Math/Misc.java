@@ -1,16 +1,3 @@
-/*
-THIS PROGRAM TESTS THE FOLLOWING METHODS FROM java.lang.Math:
-
-Math.max(double d1, double d2)
-Math.min(double d1, double d2)
-Math.random()
-Math.nextUp(double d)
-Math.nextDown(double d)
-Math.nextAfter(double d1, double d2)
-Math.IEEEremainder(double d1, double d2)
-Math.hypot(double d1, double d2)
-*/
-
 public class Misc
 {
 
@@ -233,69 +220,6 @@ public static double random_test_2()
 
 
 
-
-//@ requires !Double.isNaN(a) && a != Double.NEGATIVE_INFINITY && a != Double.POSITIVE_INFINITY;
-//@ ensures \result > a;
-public static double nextUp_test_1(double a)
-{
-	double c = Math.nextUp(a);
-	return c;
-}
-
-
-//@ requires !Double.isNaN(a) && a != Double.NEGATIVE_INFINITY && a != Double.POSITIVE_INFINITY;
-//@ ensures \result == 0;
-public static double nextUp_test_2(double a)
-{
-        double c = 0 + 0 * Math.nextUp(a);
-        return c;
-}
-
-
-
-//@ requires !Double.isNaN(a) && a != Double.NEGATIVE_INFINITY && a != Double.POSITIVE_INFINITY;
-//@ ensures \result < a;
-public static double nextDown_test_1(double a)
-{
-	double c = Math.nextDown(a);
-	return c;
-}
-
-//@ requires !Double.isNaN(a) && a != Double.NEGATIVE_INFINITY && a != Double.POSITIVE_INFINITY;
-//@ ensures \result == 0;
-public static double nextDown_test_2(double a)
-{
-        double c = 0 + 0 * Math.nextDown(a);
-        return c;
-}
-
-//@ requires b > a;
-//@ ensures \result > a;
-public static double nextAfter_test_1(double a, double b)
-{
-	double c = Math.nextAfter(a, b);
-	return c;
-}
-
-//@ ensures \result == 0;
-public static double nextAfter_test_2(double a, double b)
-{
-        double c = Math.nextAfter(a, b);
-	return 0 + c * 0;
-}
-
-
-
-//@ requires a > b;
-//@ ensures \result < a;
-public static double nextAfter_test_3(double a, double b)
-{
-        double c = Math.nextAfter(a, b);
-        return c;
-}
-
-
-
 //@ requires a >= 0 && b >= 0;
 //@ ensures \result >= 0;
 public static double IEEEremainder_test_1(double a, double b)
@@ -346,7 +270,7 @@ public static void hypot_test_3(double a, double b)
 
 
 // If either argument is infinite, the result is positive infinity
-public static void inf_test(double a, double b)
+public static void hypot_inf_test(double a, double b)
 {
 	double c = Math.hypot(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
 	//@ assert Double.isInfinite(c);
@@ -368,7 +292,7 @@ public static void inf_test(double a, double b)
 }
 
 // If either argument is NaN and no arguments are infinite, the result is NaN
-public static void nan_test(double a, double b)
+public static void hypot_nan_test(double a, double b)
 {
 	double c = Math.hypot(Double.NaN, Double.NaN);
 	//@ assert Double.isNaN(c);

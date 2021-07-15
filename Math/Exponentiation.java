@@ -1,5 +1,6 @@
 public class Exponentiation
 {
+
 	//@ requires Math.isFinite(a);
 	public static void sqrtTest(double a)
 	{

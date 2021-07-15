@@ -1,5 +1,6 @@
 public class Trigonometry
 {
+
   //@ requires Math.isFinite(a);
   public static void acosTest(double a)
   {
@@ -18,7 +19,7 @@ public class Trigonometry
   //@ requires Math.isFinite(a);
   public static void asinTest(double a)
   {
-    double result = Math.acos(a);
+    double result = Math.asin(a);
     //@ assert ((Double.compare(a, 0.0) != 0) && (Double.compare(a, -0.0) != 0)) && ((Double.compare(a, 1.0) <= 0) && (Double.compare(a, -1.0) >= 0)) ==> !Double.isNaN(result);
     //@ assert (Double.compare(a, 0.0) == 0) ==> (Double.compare(result, 0.0) == 0);
     //@ assert (Double.compare(a, -0.0) == 0) ==> (Double.compare(a, -0.0) == 0);
@@ -28,7 +29,7 @@ public class Trigonometry
   //@ requires !Math.isFinite(a);
   public static void asinTestAnomalies(double a)
   {
-    double result = Math.acos(a);
+    double result = Math.asin(a);
     //@ assert Double.isNaN(result);
   }
 

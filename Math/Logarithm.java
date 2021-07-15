@@ -1,5 +1,6 @@
 public class Logarithm
 {
+
   //@ requires Math.isFinite(a);
   public static void logTest(double a)
   {
