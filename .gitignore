@@ -7,3 +7,6 @@
 
 # ignore the external conformance tests
 SMT/conformance/*
+
+# ignore output files from timelimit in test case script
+out.txt
