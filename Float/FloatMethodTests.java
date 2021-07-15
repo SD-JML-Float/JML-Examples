@@ -44,7 +44,7 @@ public class FloatMethodTests
     // figure out how to assert expected values
   }
 
-  //@ requires Math.isFinite(a) && Math.isFinite(b);
+  //@ requires Double.isFinite(a) && Double.isFinite(b);
   public static void maxTest(float a, float b)
   {
     float result = Float.max(a, b);
@@ -52,7 +52,7 @@ public class FloatMethodTests
     //@ assert (Float.compare(a, b) < 0) ==> (Float.compare(result, b) == 0);
   }
 
-  //@ requires !Math.isFinite(a) && Math.isFinite(b);
+  //@ requires !Double.isFinite(a) && Double.isFinite(b);
   public static void maxTestAAnomalies(float a, float b)
   {
     float result = Float.max(a, b);
@@ -61,7 +61,7 @@ public class FloatMethodTests
     //@ assert (Float.compare(a, Float.NEGATIVE_INFINITY) == 0) ==> (Float.compare(result, b) == 0);
   }
 
-  //@ requires Math.isFinite(a) && !Math.isFinite(b);
+  //@ requires Double.isFinite(a) && !Double.isFinite(b);
   public static void maxTestBAnomalies(float a, float b)
   {
     float result = Float.max(a, b);
@@ -70,7 +70,7 @@ public class FloatMethodTests
     //@ assert (Float.compare(b, Float.NEGATIVE_INFINITY) == 0) ==> (Float.compare(result, a) == 0);
   }
 
-  //@ requires !Math.isFinite(a) && !Math.isFinite(b);
+  //@ requires !Double.isFinite(a) && !Double.isFinite(b);
   public static void maxTestBothAnomalies(float a, float b)
   {
     float result = Float.max(a, b);
