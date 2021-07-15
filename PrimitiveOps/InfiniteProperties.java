@@ -16,6 +16,44 @@
     //@ assert 0.0 < Double.POSITIVE_INFINITY;
     //@ assert 0.0 > Double.NEGATIVE_INFINITY;
   }
+  
+  public static void inequality_literals()
+  {
+  //@ assert 0 != Double.POSITIVE_INFINITY;
+  //@ assert 29348394.23494 != Double.POSITIVE_INFINITY;
+  //@ assert -23489348.23482934829348 != Double.NEGATIVE_INFINITY;
+  //@ assert 234243E20 != Double.POSITIVE_INFINITY;
+  }
+  
+  public static void comparison_literals()
+  {
+  //@ assert 0 < Double.POSITIVE_INFINITY;
+  //@ assert 29348394.23494 < Double.POSITIVE_INFINITY;
+  //@ assert -23489348.23482934829348 > Double.NEGATIVE_INFINITY;
+  //@ assert -234243E20 > Double.NEGATIVE_INFINITY;
+  }
+  
+  public static void inequality_constants()
+  {
+  //@ assert Double.MAX_VALUE != Double.POSITIVE_INFINITY;
+  //@ assert Double.MAX_VALUE != Double.NEGATIVE_INFINITY;
+  //@ assert -Double.MAX_VALUE != Double.POSITIVE_INFINITY;
+  //@ assert -Double.MAX_VALUE != Double.NEGATIVE_INFINITY;
+  }
+  
+  public static void comparison_constants()
+  {
+  //@ assert Double.MAX_VALUE < Double.POSITIVE_INFINITY;
+  //@ assert Double.MAX_VALUE > Double.NEGATIVE_INFINITY;
+  //@ assert -Double.MAX_VALUE < Double.POSITIVE_INFINITY;
+  //@ assert -Double.MAX_VALUE > Double.NEGATIVE_INFINITY;
+  }
+
+  public static void sign_tests()
+  {
+  //@ assert Double.POSITIVE_INFINITY == -Double.NEGATIVE_INFINITY;
+  //@ assert Double.NEGATIVE_INFINITY == -Double.POSITIVE_INFINITY;
+  }
 
   // verify that signed infinity results from division by zero with double literals
   public static void division_by_zero()

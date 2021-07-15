@@ -14,7 +14,7 @@ Double.max(double d1, double d2)
 
 public class DoubleMethodTests
 {
-  //@ requires Math.isFinite(a);
+  //@ requires Double.isFinite(a);
   public static void isInfiniteTest(double a)
   {
     boolean staticResult = Double.isInfinite(a);
@@ -24,7 +24,7 @@ public class DoubleMethodTests
     //@ assert instanceResult == false;
   }
 
-  //@ requires !Math.isFinite(a);
+  //@ requires !Double.isFinite(a);
   public static void isInfiniteTestAnomalies(double a)
   {
     boolean staticResult = Double.isFinite(a);
@@ -36,7 +36,7 @@ public class DoubleMethodTests
     //@ assert !instance.isNaN() ==> (instanceResult == true);
   }
 
-  //@ requires Math.isFinite(a);
+  //@ requires Double.isFinite(a);
   public static void isNaNTest(double a)
   {
     boolean staticResult = Double.isNaN(a);
@@ -46,7 +46,7 @@ public class DoubleMethodTests
     //@ assert instanceResult == false;
   }
 
-  //@ requires !Math.isFinite(a);
+  //@ requires !Double.isFinite(a);
   public static void isNaNTestAnomalies(double a)
   {
     boolean staticResult = Double.isNaN(a);
@@ -61,7 +61,7 @@ public class DoubleMethodTests
     //@ assert instanceResult == true;
   }
 
-  //@ requires Math.isFinite(a);
+  //@ requires Double.isFinite(a);
   public static void longBitsToDoubleTest(long a)
   {
     double staticResult = Double.longBitsToDouble(a);
@@ -75,7 +75,7 @@ public class DoubleMethodTests
     //@ assert (a == 0xfff0000000000000L) ==> (Double.compare(instanceResult, Double.NEGATIVE_INFINITY) == 0);
   }
 
-  //@ requires Math.isFinite(a);
+  //@ requires Double.isFinite(a);
   public static void longValueTest(double a)
   {
     Double instance = a;
@@ -83,7 +83,7 @@ public class DoubleMethodTests
     //@ assert instanceResult == Double.doubleToLongBits(a);
   }
 
-  //@ requires !Math.isFinite(a);
+  //@ requires !Double.isFinite(a);
   public static void longValueTestAnomalies(double a)
   {
     Double instance = a;
@@ -93,7 +93,7 @@ public class DoubleMethodTests
     //@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (instanceResult == 0xfff0000000000000L);
   }
 
-  //@ requires Math.isFinite(a) && Math.isFinite(b);
+  //@ requires Double.isFinite(a) && Double.isFinite(b);
   public static void maxTest(double a, double b)
   {
     double result = Double.max(a, b);
@@ -101,7 +101,7 @@ public class DoubleMethodTests
     //@ assert (Double.compare(a, b) < 0) ==> (Double.compare(result, b) == 0);
   }
 
-  //@ requires !Math.isFinite(a) && Math.isFinite(b);
+  //@ requires !Double.isFinite(a) && Double.isFinite(b);
   public static void maxTestAAnomalies(double a, double b)
   {
     double result = Double.max(a, b);
@@ -110,7 +110,7 @@ public class DoubleMethodTests
     //@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, b) == 0);
   }
 
-  //@ requires Math.isFinite(a) && !Math.isFinite(b);
+  //@ requires Double.isFinite(a) && !Double.isFinite(b);
   public static void maxTestBAnomalies(double a, double b)
   {
     double result = Double.max(a, b);
@@ -119,7 +119,7 @@ public class DoubleMethodTests
     //@ assert (Double.compare(b, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, a) == 0);
   }
 
-  //@ requires !Math.isFinite(a) && !Math.isFinite(b);
+  //@ requires !Double.isFinite(a) && !Double.isFinite(b);
   public static void maxTestBothAnomalies(double a, double b)
   {
     double result = Double.max(a, b);

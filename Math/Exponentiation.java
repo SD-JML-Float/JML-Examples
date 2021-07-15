@@ -1,14 +1,15 @@
 public class Exponentiation
 {
-	//@ requires Math.isFinite(a);
+
+	//@ requires Double.isFinite(a);
 	public static void sqrtTest(double a)
 	{
 		double result = Math.sqrt(a);
-		//@ assert (Double.compare(a, 0.0) >= 0) ==> (Math.isFinite(a) && (Double.compare(result, 0.0) >= 0));
+		//@ assert (Double.compare(a, 0.0) >= 0) ==> (Double.isFinite(a) && (Double.compare(result, 0.0) >= 0));
 		//@ assert (Double.compare(a, -0.0) <= 0) ==> Double.isNaN(result);
 	}
 
-	//@ requires ! Math.isFinite(a);
+	//@ requires ! Double.isFinite(a);
 	public static void sqrtTestAnomalies(double a)
 	{
 		double result = Math.sqrt(a);
@@ -16,14 +17,14 @@ public class Exponentiation
 		//@ assert (Double.compare(a, Double.POSITIVE_INFINITY) == 0) ==> (Double.compare(result, Double.POSITIVE_INFINITY) == 0);
 	}
 
-	//@ requires Math.isFinite(a);
+	//@ requires Double.isFinite(a);
 	public static void cbrtTest(double a)
 	{
 		double result = Math.cbrt(a);
-		//@ assert Math.isFinite(result);
+		//@ assert Double.isFinite(result);
 	}
 
-	//@ requires ! Math.isFinite(a);
+	//@ requires ! Double.isFinite(a);
 	public static void cbrtTestAnomalies(double a)
 	{
 		double result = Math.cbrt(a);
@@ -32,14 +33,14 @@ public class Exponentiation
 		//@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, Double.NEGATIVE_INFINITY) == 0);
 	}
 
-	//@ requires Math.isFinite(a);
+	//@ requires Double.isFinite(a);
 	public static void expTest(double a)
 	{
 		double result = Math.exp(a);
-		//@ assert Math.isFinite(result);
+		//@ assert Double.isFinite(result);
 	}
 
-	//@ requires ! Math.isFinite(a);
+	//@ requires ! Double.isFinite(a);
 	public static void expTestAnomalies(double a)
 	{
 		double result = Math.exp(a);
@@ -48,16 +49,16 @@ public class Exponentiation
 		//@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, 0.0) == 0);
 	}
 
-	//@ requires Math.isFinite(a);
+	//@ requires Double.isFinite(a);
 	public static void expm1Test(double a)
 	{
 		double result = Math.expm1(a);
-		//@ assert Math.isFinite(result);
+		//@ assert Double.isFinite(result);
 		//@ assert (Double.compare(a, 0.0) == 0) ==> (Double.compare(a, 0.0) == 0);
 		//@ assert (Double.compare(a, -0.0) == 0) ==> (Double.compare(a, -0.0) == 0);
 	}
 
-	//@ requires ! Math.isFinite(a);
+	//@ requires ! Double.isFinite(a);
 	public static void exmp1TestAnomalies(double a)
 	{
 		double result = Math.expm1(a);
@@ -66,15 +67,15 @@ public class Exponentiation
 		//@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, -1.0)) == 0;
 	}
 
-	//@ requires Math.isFinite(a);
+	//@ requires Double.isFinite(a);
 	public static void getExponentTest(double a)
 	{
 		double result = Math.getExponent(a);
-		//@ assert Math.isFinite(result);
+		//@ assert Double.isFinite(result);
 		//@ assert (Double.compare(a, 0.0) == 0) || (Double.compare(a, -0.0) == 0) ==> (Double.compare(result, Double.MIN_EXPONENT - 1.0) == 0);
 	}
 
-	//@ requires ! Math.isFinite(a);
+	//@ requires ! Double.isFinite(a);
 	public static void getExponentTestAnomalies(double a)
 	{
 		double result = Math.getExponent(a);
@@ -83,10 +84,10 @@ public class Exponentiation
 		//@ assert (Double.compare(a, Double.NEGATIVE_INFINITY) == 0) ==> (Double.compare(result, Double.MAX_EXPONENT + 1) == 0);
 	}
 
-	//@ requires Math.isFinite(a) && Math.isFinite(b);
+	//@ requires Double.isFinite(a) && Double.isFinite(b);
 	public static void powTest(double a, double b)
 	{
 		double result = Math.pow(a, b);
-		//@ assert Math.isFinite(result);
+		//@ assert Double.isFinite(result);
 	}
 }
