@@ -432,15 +432,13 @@ public class NumberArithmetic
     //@ requires Float.isFinite(a) && Float.isFinite(b) && Float.isFinite(c) && Float.isFinite(d);    
     public static void add_ordering(float a, float b, float c, float d)
     {
-	//@ assert (a < b && c < d) ==> (a + c) < (b + d); //ordering
-	//@ assert ( a <= b && c <= d) ==> (a + c) <= (b + d); //ordering
+	//@ assert (a < b && c < d) ==> (a + c) <= (b + d); //ordering
     }
     
     //@ requires Double.isFinite(a) && Double.isFinite(b) && Double.isFinite(c) && Double.isFinite(d);    
     public static void add_ordering(double a, double b, double c, double d)
     {
-	//@ assert (a < b && c < d) ==> (a + c) < (b + d); //ordering
-	//@ assert ( a <= b && c <= d) ==> (a + c) <= (b + d); //ordering
+	//@ assert (a < b && c < d) ==> (a + c) <= (b + d); //ordering
     }
     
     //@ requires Float.isFinite(a) && Float.isFinite(b) && Float.isFinite(c) && Float.isFinite(d); 
@@ -552,15 +550,13 @@ public class NumberArithmetic
     //@ requires Float.isFinite(a) && Float.isFinite(b) && Float.isFinite(c) && Float.isFinite(d); 
     public static void mult_ordering(float a, float b, float c, float d)
     {
-    	//@ assert a < b && 0 < c ==> a * c < b * c; //ordering property
-	//@ assert a <= b && 0 <= c ==> a * c <= b* c;
+    	//@ assert a < b && 0 <= c ==> a * c <= b * c; //ordering property
     }
     
     //@ requires Double.isFinite(a) && Double.isFinite(b) && Double.isFinite(c) && Double.isFinite(d);     
     public static void mult_ordering(double a, double b, double c, double d)
     {
-    	//@ assert a < b && 0 < c ==> a * c < b * c; //ordering property
-	//@ assert a <= b && 0 <= c ==> a * c <= b* c;
+    	//@ assert a < b && 0 <= c ==> a * c <= b * c; //ordering property
     }
     
     //@ requires Float.isFinite(a) && Float.isFinite(b) && Float.isFinite(c) && Float.isFinite(d); 
