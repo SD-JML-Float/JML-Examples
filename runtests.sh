@@ -15,24 +15,25 @@
 
 
 #timelimit that we let OpenJML run for on a given method
-timelimit=8
+timelimit=15
 
 #boolean, do we test primitive test files?
 testPrimitives=true
 
 #boolean, do we test Double test files?
-testDouble=false
+testDouble=true
 
 #boolean, do we test Float test files?
-testFloat=false
+testFloat=true
 
 #boolean, do we test Math test files?
-testMath=false
+testMath=true
 
 #counters to keep track of test case results (valid, invalid, error, hang)
 valid=0
 invalid=0
 error=0
+infeasible=0
 hang=0
 
 
@@ -40,7 +41,7 @@ hang=0
 if $testPrimitives ; then
 
 echo "Primitives"
-for filename in PrimitiveOps/*.java; do
+for filename in PrimitiveOps/AdditionProperties.java; do
 	javac $filename
 	echo -e "\t$filename"
 
@@ -71,13 +72,14 @@ for filename in PrimitiveOps/*.java; do
 				printf '\t\t%-30s %s\n' "$method" "error"
 				((error++))		
 			
-			elif ! grep -q "Invalid:      0" "out.txt"; then
-				printf '\t\t%-30s %s\n' "$method" "invalid"
-				((invalid++))						
 				
 			elif ! grep -q "Infeasible:   0" "out.txt"; then
 				printf '\t\t%-30s %s\n' "$method" "infeasible"
-				((infeasible++))						
+				((infeasible++))
+			
+			elif ! grep -q "Invalid:      0" "out.txt"; then
+				printf '\t\t%-30s %s\n' "$method" "invalid"
+				((invalid++))												
 
 			else
 				printf '\t\t%-30s %s\n' "$method" "valid"
@@ -97,7 +99,7 @@ total_hang=$hang
 total_infeasible=$infeasible
 total_error=$error
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\n\n\nPrimitives Results:\n\tTotal Valid:       %2s\n\tTotal Invalid:     %2s\n\tTotal Infeasible:  %2s\n\tTotal Errors:      %2s\n\tTotal Hanged:      %2s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 fi
 
 valid=0
@@ -169,7 +171,7 @@ done
 ((total_infeasible+=$infeasible))
 ((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\n\n\nDouble Results:\n\tTotal Valid:       %2s\n\tTotal Invalid:     %2s\n\tTotal Infeasible:  %2s\n\tTotal Errors:      %2s\n\tTotal Hanged:      %2s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 fi
 
@@ -243,7 +245,7 @@ done
 ((total_hang+=$hang))
 ((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+printf '\n\n\nFloat Results:\n\tTotal Valid:       %2s\n\tTotal Invalid:     %2s\n\tTotal Infeasible:  %2s\n\tTotal Errors:      %2s\n\tTotal Hanged:      %2s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 fi
 
@@ -315,13 +317,14 @@ done
 ((total_hang+=$hang))
 ((total_error+=$error))
 
-printf '\nPrimitives Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
+      
+printf '\n\n\nMath Results:\n\tTotal Valid:       %2s\n\tTotal Invalid:     %2s\n\tTotal Infeasible:  %2s\n\tTotal Errors:      %2s\n\tTotal Hanged:      %2s\n\n\n' "$valid" "$invalid" "$infeasible" "$error" "$hang"
 
 
 fi
 
 
-printf '\n\n\n\nOverall Results:\n\tTotal Valid:%-22s\n\tTotal Invalid:%-22s\n\tTotal Infeasible:%-22s\n\tTotal Errors:%-22s\n\tTotal Hanged:%-22s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_error" "$total_hang"
+printf '\n\n\n\nOverall Results:\n\tTotal Valid:       %2s\n\tTotal Invalid:     %2s\n\tTotal Infeasible:  %2s\n\tTotal Errors:      %2s\n\tTotal Hanged:      %2s\n\n\n' "$total_valid" "$total_invalid" "$total_infeasible" "$total_error" "$total_hang"
 
 
 
