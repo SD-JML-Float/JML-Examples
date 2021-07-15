@@ -2252,4 +2252,305 @@ public class MethodCalls
 	Math.nextAfter(Double.NaN, Double.NaN);
   }
   
+  
+  //Positive number inputs
+  public static void ceil_plain_test_1()
+  {
+	Math.ceil(2223434.8923);
+	Math.ceil(99.4023);
+	Math.ceil(0.00234204);
+  }
+
+  //Negative number inputs
+  public static void ceil_plain_test_2()
+  {
+	Math.ceil(-5834.53453);
+	Math.ceil(-349.0);
+	Math.ceil(-0.00348432);
+  }
+
+  //Scientific notation inputs
+  public static void ceil_plain_test_3()
+  {
+	Math.ceil(3.2034E12);
+	Math.ceil(56.203424E3);
+	Math.ceil(64.3433E-7);
+	Math.ceil(-342.2348E9);
+	Math.ceil(-1.514E-2);
+	Math.ceil(-0.00253E5);
+  }
+
+  //Integer inputs
+  public static void ceil_plain_test_4()
+  {
+	Math.ceil(13);
+	Math.ceil(-145);
+	Math.ceil(0);
+	Math.ceil(12323);
+  }
+
+  //float inputs
+  public static void ceil_plain_test_5()
+  {
+	Math.ceil(234.23f);
+	Math.ceil(-15.244f);
+	Math.ceil(-0.003456f);
+	Math.ceil(13f);
+  }
+
+  //POSITIVE_INFINITY
+  public static void ceil_plain_test_6()
+  {
+	Math.ceil(Double.POSITIVE_INFINITY);
+  }
+
+  //NEGATIVE_INFINITY
+  public static void ceil_plain_test_7()
+  {
+	Math.ceil(Double.NEGATIVE_INFINITY);
+  }
+
+  //0.0
+  public static void ceil_plain_test_8()
+  {
+	Math.ceil(0.0);
+  }
+
+  //-0.0 
+  public static void ceil_plain_test_9()
+  {
+	Math.ceil(-0.0);
+  }
+
+  //NaN
+  public static void ceil_plain_test_10()
+  {
+	Math.ceil(Double.NaN);
+  }
+  
+  //Positive number inputs
+  public static void floor_plain_test_1()
+  {
+	Math.floor(2223434.8923);
+	Math.floor(99.4023);
+	Math.floor(0.00234204);
+  }
+
+  //Negative number inputs
+  public static void floor_plain_test_2()
+  {
+	Math.floor(-5834.53453);
+	Math.floor(-349.0);
+	Math.floor(-0.00348432);
+  }
+
+  //Scientific notation inputs
+  public static void floor_plain_test_3()
+  {
+	Math.floor(3.2034E12);
+	Math.floor(56.203424E3);
+	Math.floor(64.3433E-7);
+	Math.floor(-342.2348E9);
+	Math.floor(-1.514E-2);
+	Math.floor(-0.00253E5);
+  }
+
+  //Integer inputs
+  public static void floor_plain_test_4()
+  {
+	Math.floor(13);
+	Math.floor(-145);
+	Math.floor(0);
+	Math.floor(12323);
+  }
+
+  //float inputs
+  public static void floor_plain_test_5()
+  {
+	Math.floor(234.23f);
+	Math.floor(-15.244f);
+	Math.floor(-0.003456f);
+	Math.floor(13f);
+  }
+
+  //POSITIVE_INFINITY
+  public static void floor_plain_test_6()
+  {
+	Math.floor(Double.POSITIVE_INFINITY);
+  }
+
+  //NEGATIVE_INFINITY
+  public static void floor_plain_test_7()
+  {
+	Math.floor(Double.NEGATIVE_INFINITY);
+  }
+
+  //0.0
+  public static void floor_plain_test_8()
+  {
+	Math.floor(0.0);
+  }
+
+  //-0.0 
+  public static void floor_plain_test_9()
+  {
+	Math.floor(-0.0);
+  }
+
+  //NaN
+  public static void floor_plain_test_10()
+  {
+	Math.floor(Double.NaN);
+  }
+  
+    //Positive number inputs
+  public static void rint_plain_test_1()
+  {
+	Math.rint(2223434.8923);
+	Math.rint(99.4023);
+	Math.rint(0.00234204);
+  }
+
+  //Negative number inputs
+  public static void rint_plain_test_2()
+  {
+	Math.rint(-5834.53453);
+	Math.rint(-349.0);
+	Math.rint(-0.00348432);
+  }
+
+  //Scientific notation inputs
+  public static void rint_plain_test_3()
+  {
+	Math.rint(3.2034E12);
+	Math.rint(56.203424E3);
+	Math.rint(64.3433E-7);
+	Math.rint(-342.2348E9);
+	Math.rint(-1.514E-2);
+	Math.rint(-0.00253E5);
+  }
+
+  //Integer inputs
+  public static void rint_plain_test_4()
+  {
+	Math.rint(13);
+	Math.rint(-145);
+	Math.rint(0);
+	Math.rint(12323);
+  }
+
+  //float inputs
+  public static void rint_plain_test_5()
+  {
+	Math.rint(234.23f);
+	Math.rint(-15.244f);
+	Math.rint(-0.003456f);
+	Math.rint(13f);
+  }
+
+  //POSITIVE_INFINITY
+  public static void rint_plain_test_6()
+  {
+	Math.rint(Double.POSITIVE_INFINITY);
+  }
+
+  //NEGATIVE_INFINITY
+  public static void rint_plain_test_7()
+  {
+	Math.rint(Double.NEGATIVE_INFINITY);
+  }
+
+  //0.0
+  public static void rint_plain_test_8()
+  {
+	Math.rint(0.0);
+  }
+
+  //-0.0 
+  public static void rint_plain_test_9()
+  {
+	Math.rint(-0.0);
+  }
+
+  //NaN
+  public static void rint_plain_test_10()
+  {
+	Math.rint(Double.NaN);
+  }
+  
+  //Positive number inputs
+  public static void round_plain_test_1()
+  {
+	Math.round(2223434.8923);
+	Math.round(99.4023);
+	Math.round(0.00234204);
+  }
+
+  //Negative number inputs
+  public static void round_plain_test_2()
+  {
+	Math.round(-5834.53453);
+	Math.round(-349.0);
+	Math.round(-0.00348432);
+  }
+
+  //Scientific notation inputs
+  public static void round_plain_test_3()
+  {
+	Math.round(3.2034E12);
+	Math.round(56.203424E3);
+	Math.round(64.3433E-7);
+	Math.round(-342.2348E9);
+	Math.round(-1.514E-2);
+	Math.round(-0.00253E5);
+  }
+
+  //Integer inputs
+  public static void round_plain_test_4()
+  {
+	Math.round(13);
+	Math.round(-145);
+	Math.round(0);
+	Math.round(12323);
+  }
+
+  //float inputs
+  public static void round_plain_test_5()
+  {
+	Math.round(234.23f);
+	Math.round(-15.244f);
+	Math.round(-0.003456f);
+	Math.round(13f);
+  }
+
+  //POSITIVE_INFINITY
+  public static void round_plain_test_6()
+  {
+	Math.round(Double.POSITIVE_INFINITY);
+  }
+
+  //NEGATIVE_INFINITY
+  public static void round_plain_test_7()
+  {
+	Math.round(Double.NEGATIVE_INFINITY);
+  }
+
+  //0.0
+  public static void round_plain_test_8()
+  {
+	Math.round(0.0);
+  }
+
+  //-0.0 
+  public static void round_plain_test_9()
+  {
+	Math.round(-0.0);
+  }
+
+  //NaN
+  public static void round_plain_test_10()
+  {
+	Math.round(Double.NaN);
+  }
+  
 }
