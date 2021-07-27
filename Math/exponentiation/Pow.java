@@ -1,10 +1,10 @@
 public class Pow
 {
-  /**
-   * @eunsures \result = Math.pow(num, pow);
-   */
-  public static double powDouble(double num, doulbe pow)
-  {
-    return Math.pow(num, pow);
-  }
+  //@ TODO - make more cases for pow
+	//@ requires Double.isFinite(a) && Double.isFinite(b);
+	public static void powTest(double a, double b)
+	{
+		double result = Math.pow(a, b);
+		//@ assert Double.isFinite(result);
+	}
 }
