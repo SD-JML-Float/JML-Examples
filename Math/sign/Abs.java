@@ -1,56 +1,35 @@
 public class Abs
 {
-  /**
-   * @requires (Math.isFinite(num));
-   * @ensures \result = Math.abs(num);
-   */
-  public static float absFloat(float num)
+  //@ requires Double.isFinite(a);
+  public static void absTestFloat(float a)
   {
-    return Math.abs(num);
+    float result = Math.abs(a);
+    //@ assert Double.isFinite(result);
+    //@ assert (Float.compare(result, 0.0f) >= 0);
   }
 
-  /**
-   * @requires (Math.isInfinite(num));
-   * @ensures Math.isInfinite(\result);
-   */
-  public static float absFloatInfinite(float num)
+  //@ requires ! Double.isFinite(a);
+  public static void absTestAnomaliesFloat(float a)
   {
-    return Math.abs(num);
+    float result = Math.abs(a);
+    //@ assert ((Float.compare(a, Float.POSITIVE_INFINITY) == 0) || (Float.compare(a, Float.NEGATIVE_INFINITY) == 0)) ==> (Float.compare(result, Float.POSITIVE_INFINITY) == 0);
+    //@ assert Float.isNaN(a) ==> Float.isNaN(result);
   }
 
-  /**
-   * @requires (Float.NaN(num));
-   * @ensures \result = Float.NaN;
-   */
-  public static float absFloatNaN(float num)
+  //@ requires Double.isFinite(a);
+  public static void absTestDouble(double a)
   {
-    return Math.abs(num);
+    double result = Math.abs(a);
+    //@ assert Double.isFinite(result);
+    //@ assert (Double.compare(result, 0.0) >= 0);
   }
 
-  /**
-   * @requires (Math.isFinite(num));
-   * @ensures \result = Math.abs(num);
-   */
-  public static double absDouble(double num)
+  //@ requires ! Double.isFinite(a);
+  public static void absTestAnomaliesDouble(double a)
   {
-    return Math.abs(num);
+    double result = Math.abs(a);
+    //@ assert ((Double.compare(a, Double.POSITIVE_INFINITY) == 0) || (Double.compare(a, Double.NEGATIVE_INFINITY) == 0)) ==> (Double.compare(result, Double.POSITIVE_INFINITY) == 0);
+    //@ assert Double.isNaN(a) ==> Double.isNaN(result);
   }
 
-  /**
-   * @requires (Math.isInfinite(num));
-   * @ensures Math.isInfinite(\result);
-   */
-  public static double absDoubleInfinite(double num)
-  {
-    return Math.abs(num);
-  }
-
-  /**
-   * @requires (Double.NaN(num));
-   * @ensures \result = Double.NaN;
-   */
-  public static double absDoubleNaN(double num)
-  {
-    return Math.abs(num);
-  }
 }

@@ -13,11 +13,12 @@ public static double IEEEremainder_test_1(double a, double b)
 	return c;
 }
 
+//@ requires a == b;
 //@ ensures \result == 0;
 public static double IEEEremainder_test_2(double a, double b)
 {
-        double c = Math.IEEEremainder(a, b);
-	return 0 + c * 0;
+  double c = Math.IEEEremainder(a, b);
+	return c;
 }
 
 

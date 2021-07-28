@@ -14,7 +14,7 @@ public class DiscreteOps
 
     }
 
-    // Rounded a value down to negative infinity, that balue being -1.0/4.0, presumed issue with definition of Infinities and issue with flooring
+    // Rounded a value down to negative infinity, that value being -1.0/4.0, presumed issue with definition of Infinities and issue with flooring
     public void floorTest(double a) {
         double b = Math.floor(a);
         //@ assert Double.isNaN(a) <==> Double.isNaN(b);
@@ -24,8 +24,8 @@ public class DiscreteOps
         //@ assert Double.isFinite(a) && (a > 0) <==> b-a <= 0.0d && b-a > -1.0d;
     }
 
-    // Issues are found with the sepcification on rint Double.isNaN(a) thinks that result == a which is not true for NaN since NaN not comparable
-    // DOes not round to the nearest Value correctly in SMT
+    // Issues are found with the specification on rint Double.isNaN(a) thinks that result == a which is not true for NaN since NaN not comparable
+    // Does not round to the nearest value correctly in SMT
     public void rintTest(double a) {
         double b = Math.rint(a);
         //@ assert Double.isNaN(a) <==> Double.isNaN(b);
