@@ -1,4 +1,4 @@
-public class isInfinite{
+public class IsInfinite{
   public static void isInfiniteTest(float a)
   {
     boolean result = Float.isInfinite(a);
