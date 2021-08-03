@@ -41,7 +41,7 @@ hang=0
 if $testPrimitives ; then
 
 echo "Primitives"
-for filename in PrimitiveOps/AdditionProperties.java; do
+for filename in PrimitiveOps/*.java; do
 	javac $filename
 	echo -e "\t$filename"
 
