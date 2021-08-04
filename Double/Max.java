@@ -3,8 +3,8 @@ public class Max{
   public static void maxTest(double a, double b)
   {
     double result = Double.max(a, b);
-    //@ assert (Double.compare(a, b) >= 0) ==> (Double.compare(result, a) == 0);
-    //@ assert (Double.compare(a, b) < 0) ==> (Double.compare(result, b) == 0);
+    //@ assert (a > b) ==> result == a;
+    //@ assert (a < b) ==> result == b;
   }
 
   //@ requires !Double.isFinite(a) && Double.isFinite(b);
