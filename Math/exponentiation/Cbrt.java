@@ -3,9 +3,9 @@ public class Cbrt
   //@ requires Double.isFinite(a);
 	public static void cbrtTest(double a)
 	{
-		//@ assert Double.isFinite(a);
 		double result = Math.cbrt(a);
 		//@ assert Double.isFinite(result);
+		//@ assert Math.close(a, result * result * result, 3.0E-16);
 	}
 
 	//@ requires ! Double.isFinite(a);

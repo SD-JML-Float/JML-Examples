@@ -94,7 +94,7 @@ public class Min
 
 		c = Math.min(Double.POSITIVE_INFINITY, a);
 		//@ assert Double.isFinite(a) ==> Double.isFinite(c);
-		//@ assert (a > Double.NEGATIVE_INFINITY) ==> Double.isFinite(c);
+		//@ assert (a > Double.NEGATIVE_INFINITY) && (a != Double.POSITIVE_INFINITY) ==> Double.isFinite(c);
 
 		c = Math.min(a, b);
 		//@ assert (Double.isFinite(a) && Double.isFinite(b)) ==> Double.isFinite(c);
