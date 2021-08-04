@@ -11,11 +11,11 @@ public /*@ pure @*/ class NaNProperties
       //@ assert !(Double.NaN < 0.0);
       //@ assert !(Double.NaN > 0.0);
     }
-    
+
     public static void literal_comparisons()
     {
       //@ assert !Double.isNaN(32049234.23423);
-      //@ assert !Double.isNaN(2384322892342);
+      //@ assert !Double.isNaN(238432289);
       //@ assert !Double.isNaN(-32049234.23423);
       //@ assert !Double.isNaN(-238432289);
       //@ assert 234.2342E18 != Double.NaN;
@@ -25,7 +25,7 @@ public /*@ pure @*/ class NaNProperties
       //@ assert !(Double.NaN < -2234234523.234);
       //@ assert !(Double.NaN > 238429348.8293489234);
     }
-    
+
     public static void constant_comparisons()
     {
       //@ assert !Double.isNaN(Double.MAX_VALUE);
