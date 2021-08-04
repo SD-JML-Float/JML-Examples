@@ -22,23 +22,4 @@ public class Random
 		a = a - 5;
                 return a;
         }
-
-
-	// //THE FOLLOWING TWO FUNCTIONS SHOULD BE EVALUATED AS FALSE BY OPENJML
-	//@ensures 0.0 > \result || \result >= 1.0;
-        public static double random_test_3()
-        {
-                double a = Math.random();
-                return a;
-        }
-
-
-	//@ensures -5.0 > \result || \result >= 5.0;
-	public static double random_test_4()
-	{
-                double a = Math.random();
-                a = 10 * a;
-                a = a - 5;
-                return a;
-	}
 }
